@@ -2,8 +2,6 @@ name: 联通挂机任务积分脚本
 
 on:
 
-  
-
   push: # push触发
 
     branches: [ main ]
@@ -130,9 +128,9 @@ jobs:
 
         appid: ${{secrets.unicom_appid}}
         config: ${{secrets.CONFIG}}
-       # 不使用单用户在下面那句代码前面加上#号
-        run: node index.js unicom --user=${user} --password=${password} --appid=${appid}    
-    #使用多用户的把下面代码的#号去了
-    #  run: |
-    #    echo $config > default.json
-    #    node index.js unicom --config  default.json
+        #不用单用户的下面这句代码前面加上#号
+        run: node index.js unicom --user=${user} --password=${password} --appid=${appid}     //
+        #不用多用户的把代码前的的#号去了这边的字也删了
+     # run: |
+      #  echo $config > default.json
+      #  node index.js unicom --config  default.json
