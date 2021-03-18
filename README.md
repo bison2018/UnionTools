@@ -33,5 +33,5 @@ https://github.com/你的用户名/88-AutoSignMachine/settings/secrets/actions �
       config: ${{secrets.CONFIG}}
       run: |
         echo "$config" > ./config.json
-        node index.js unicom -config config.json
+        node index.js unicom --config config.json
 
