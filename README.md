@@ -19,24 +19,8 @@ NOTIFY_SCKEY（service酱得key）
 
 https://github.com/你的用户名/88-AutoSignMachine/settings/secrets/actions 然后点击New repository secret
 
-上面填config
+unicom_user2（手机号）
 
-下面写
-       
-        {
-        "accountSn": "1,2",
-        "user-1": "221",
-        "password-1": "311",
-        "appid-1": "411",
-        "user-2": "251",
-        "password-2": "721",
-        "appid-2": "921"
-        }
-        
-然后在自动脚本里把最后一句删了改成下面这两句
-       
-          config: ${{secrets.CONFIG}}
-          run: |
-          echo "$config" > ./config.json
-          node index.js unicom --config config.json
-         
+unicom_password2（服务密码）
+
+unicom_appid2（http://m.client.10010.com/mobileService/customer/getclientconfig.htm?appId= 开抓包 你再打开手厅就能找到了或者共享主号的）
