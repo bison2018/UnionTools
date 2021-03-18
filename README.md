@@ -38,8 +38,9 @@ https://github.com/你的用户名/88-AutoSignMachine/settings/secrets/actions �
 
 然后在自动脚本里把最后一句删了改成下面这两句
 
-echo ${{secrets.unicom_config}} >> config.json
-
-run: node index.js unicom -config config.json
+      config: ${{secrets.CONFIG}}
+      run: |
+        echo "$config" > ./config.json
+        node index.js unicom -config config.json
 
 代码里的换行自己删了 不太会用GitHub的编辑器
