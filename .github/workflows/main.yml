@@ -130,7 +130,9 @@ jobs:
 
         appid: ${{secrets.unicom_appid}}
         config: ${{secrets.CONFIG}}
-        #run: node index.js unicom --user=${user} --password=${password} --appid=${appid}     //不用多用户的把这行的井号去了这边的字也删了 把下面的代码删了
-      run: |
-        echo $config > default.json
-        node index.js unicom --config  default.json
+       # 不使用单用户在下面那句代码前面加上#号
+        run: node index.js unicom --user=${user} --password=${password} --appid=${appid}    
+    #使用多用户的把下面代码的#号去了
+    #  run: |
+    #    echo $config > default.json
+    #    node index.js unicom --config  default.json
