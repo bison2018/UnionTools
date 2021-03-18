@@ -13,18 +13,33 @@ unicom_appid（http://m.client.10010.com/mobileService/customer/getclientconfig.
 NOTIFY_SCKEY（service酱得key）
 #多用户
 https://github.com/你的用户名/88-AutoSignMachine/settings/secrets/actions 然后点击New repository secret
+
 上面输入config
+
 下面输入这个
+
 {
+
 "accountSn": "1,2",
+
 "user-1": "221",
+
 "password-1": "311",
+
 "appid-1": "411",
+
 "user-2": "251",
+
 "password-3": "721",
+
 "appid-2": "921"
+
 }
 
 然后在自动脚本里把最后一句删了改成下面这两句
+
 echo ${{secrets.unicom_config}} >> config.json
+
 run: node index.js unicom -config config.json
+
+代码里的换行自己删了 不太会用GitHub的编辑器
