@@ -20,7 +20,7 @@ https://github.com/你的用户名/88-AutoSignMachine/settings/secrets/actions �
 上面填config
 
 下面写
-        ```
+       
         {
         "accountSn": "1,2",
         "user-1": "221",
@@ -30,11 +30,11 @@ https://github.com/你的用户名/88-AutoSignMachine/settings/secrets/actions �
         "password-2": "721",
         "appid-2": "921"
         }
-        ```
+        
 然后在自动脚本里把最后一句删了改成下面这两句
-        ```
+       
           config: ${{secrets.CONFIG}}
           run: |
           echo "$config" > ./config.json
           node index.js unicom --config config.json
-         ```
+         
