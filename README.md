@@ -24,7 +24,7 @@ https://github.com/你的用户名/88-AutoSignMachine/settings/secrets/actions �
       "password-1": "311",
       "appid-1": "411",
       "user-2": "251",
-      "password-3": "721",
+      "password-2": "721",
       "appid-2": "921"
       }
 
