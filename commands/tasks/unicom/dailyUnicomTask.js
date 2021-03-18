@@ -141,7 +141,7 @@ var dailyUnicomTask = {
             acid: 'AC20200716103629',
             taskId: '90d46c26212649788ed1dd14134d35e5',
             codeId: 945535612,
-            reward_name: '领福利赚积分-翻倍得积分'
+            reward_name: '安柠牛逼'
         })
         if (params) {
             await require('./rewardVideo').doTask(axios, {
@@ -154,7 +154,7 @@ var dailyUnicomTask = {
                 arguments9: "",
                 orderId: params['orderId'],
                 codeId: 945689604,
-                reward_name: '领福利赚积分-翻倍得积分'
+                reward_name: '安柠牛逼'
             })
         }
 
@@ -164,7 +164,7 @@ var dailyUnicomTask = {
             acid: 'AC20200716103629',
             taskId: '034a70393ef246039264765216450d5d',
             codeId: 945535612,
-            reward_name: '领福利赚积分-翻倍得积分'
+            reward_name: '安柠牛逼'
         })
         if (params) {
             await require('./rewardVideo').doTask(axios, {
@@ -177,7 +177,7 @@ var dailyUnicomTask = {
                 arguments9: "",
                 orderId: params['orderId'],
                 codeId: 945689604,
-                reward_name: '领福利赚积分-翻倍得积分'
+                reward_name: '安柠牛逼'
             })
         }
     },
@@ -209,7 +209,7 @@ var dailyUnicomTask = {
                 'arguments8': '',
                 'arguments9': '',
                 'netWay': 'Wifi',
-                'remark': '签到领福利赚积分翻牌活动',
+                'remark': '安柠牛逼',
                 'version': appInfo.unicom_version,
                 'codeId': 945535532
             }

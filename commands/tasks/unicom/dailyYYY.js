@@ -166,7 +166,7 @@ var dailyYYY = {
       acid: 'AC20200611152252',
       taskId: '627292f1243148159c58fd58917c3e67',
       codeId: 945689604,
-      reward_name: '签到小游戏摇摇乐不倒翁',
+      reward_name: '安柠牛逼',
       limit: 1
     })
   },

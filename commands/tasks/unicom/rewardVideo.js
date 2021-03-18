@@ -87,7 +87,7 @@ var rewardVideo = {
                 jar
             })
 
-            let s = Math.floor(Math.random() * 20)
+            let s = Math.floor(Math.random() * 5)
             console.info('等待%s秒再继续', s)
             await new Promise((resolve, reject) => setTimeout(resolve, s * 1000))
 

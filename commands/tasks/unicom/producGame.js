@@ -367,13 +367,13 @@ var producGame = {
         let games = await producGame.timeTaskQuery(axios, options)
         games = allgames.filter(g => games.filter(g => g.state === '0').map(i => i.gameId).indexOf(g.id) !== -1)
         console.info('剩余未完成game', games.length)
-        let queue = new PQueue({ concurrency: 30 });
+        let queue = new PQueue({ concurrency: 2 });
 
         // 特例游戏
         // 亿万豪车2
         let others = ['1110422106']
 
-        console.info('调度任务中', '并发数', 30)
+        console.info('调度任务中', '并发数', 2)
         for (let game of games) {
             queue.add(async () => {
                 console.info(game.name)
@@ -415,9 +415,9 @@ var producGame = {
         let { games, jar } = await producGame.getTaskList(axios, options)
         games = games.filter(d => d.task === '5' && d.reachState === '0' && d.task_type === 'duration')
         console.info('剩余未完成game', games.length)
-        let queue = new PQueue({ concurrency: 30 });
+        let queue = new PQueue({ concurrency: 2 });
 
-        console.info('调度任务中', '并发数', 30)
+        console.info('调度任务中', '并发数', 2)
         for (let game of games) {
             queue.add(async () => {
                 console.info(game.name)
@@ -516,10 +516,9 @@ var producGame = {
         if (data) {
             console.info(data.msg)
             if (data.msg.indexOf('防刷策略接口校验不通过') !== -1) {
-               // throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
-               console.error('获取奖励失败')
+                throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
             }
-            console.reward('flow', '100m')
+            console.reward('flow', 100)
         } else {
             console.error('获取奖励失败')
         }
@@ -546,8 +545,7 @@ var producGame = {
         if (data) {
             console.info(data.msg)
             if (data.msg.indexOf('防刷策略接口校验不通过') !== -1) {
-            //    throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
-            console.error('获取奖励失败')
+                throw new Error('出现【防刷策略接口校验不通过】, 取消本次执行')
             }
             console.reward('integral', 5)
         } else {
@@ -643,8 +641,8 @@ var producGame = {
                 ...options,
                 taskCenterId: today_task.id
             })
-            console.reward('flow', '200m')
-            console.info('领取完成今日任务流量+200m')
+            console.reward('flow', 200)
+            console.info('领取完成今日任务流量+200')
         } else if (today_task.reachState === '2') {
             console.info('每日日常任务已完成')
         }

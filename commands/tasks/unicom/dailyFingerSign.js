@@ -178,7 +178,7 @@ var dailyFingerSign = {
             acid: 'AC20200611152252',
             taskId: '627292f1243148159c58fd58917c3e67',
             codeId: 945689604,
-            reward_name: '猜拳拿奖翻倍得积分',
+            reward_name: '安柠牛逼',
             limit: 1
         })
     },

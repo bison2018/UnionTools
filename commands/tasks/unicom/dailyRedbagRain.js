@@ -20,7 +20,7 @@ var dailyRedbagRain = {
             acid: 'AC20200521222721',
             taskId: 'c32ef7f06d8e4b5fa3818a5504da2109',
             codeId: 945569148,
-            reward_name: '现金红包雨看视频得积分'
+            reward_name: '安柠牛逼'
         })
     },
     oauthMethod: async (axios, options) => {

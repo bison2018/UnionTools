@@ -4,7 +4,7 @@ var dailyBookVideo = {
       ...options,
       acid: 'AC20200521222721',
       taskId: '5a6dd5106495402d9dcc5e801f3171b3',
-      reward_name: '章节视频得积分',
+      reward_name: '安柠牛逼',
       arguments7: 'woyuedu',
       arguments8: 'a123456'
     })

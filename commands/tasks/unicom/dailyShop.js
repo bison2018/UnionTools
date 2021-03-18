@@ -7,7 +7,7 @@ var dailyShop = {
             acid: 'AC20200624091508',
             taskId: '10e36b51060a46499e48082656602bf8',
             codeId: 945254816,
-            reward_name: '10分精彩看视频得积分',
+            reward_name: '安柠牛逼',
             remark: '支付页'
         })
     },

@@ -57,7 +57,7 @@ var dailyBookRead = {
       acid: 'AC20200521222721',
       taskId: 'c32ef7f06d8e4b5fa3818a5504da2109',
       codeId: 945569148,
-      reward_name: '阅读会员日看视频得积分'
+      reward_name: '安柠牛逼'
     })
   },
   // 阅读会员日活动-签到
@@ -95,7 +95,7 @@ var dailyBookRead = {
       acid: 'AC20200521222721',
       taskId: '93273c65ee2048c29b8e630a4b456cf0',
       codeId: 945535616,
-      reward_name: '阅读计时器任务得积分'
+      reward_name: '安柠牛逼'
     })
   }
 }

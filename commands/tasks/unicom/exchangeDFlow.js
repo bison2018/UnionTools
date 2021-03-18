@@ -47,9 +47,9 @@ var exchangeDFlow = {
         ]
 
         // 可使用 --exchangeDFlowCircle-productId 21010621565413402 选项指定兑换流量包ID
-        let { 'exchangeDFlowCircle-productId': productId = 'ff80808166c5ee6701676ce21fd14716' } = options
+        let { 'exchangeDFlowCircle-productId': productId = '***********' } = options
         if (product.map(p => p.productId).indexOf(productId + '') === -1) {
-            productId = 'ff80808166c5ee6701676ce21fd14716'
+            productId = '***********'
         }
         let selectedFlow = product.find(p => p.productId === productId)
         console.info('将兑换', selectedFlow.productName)

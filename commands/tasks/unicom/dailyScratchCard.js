@@ -151,7 +151,7 @@ var dailyScratchCard = {
             acid: 'AC20200716103629',
             taskId: '9e368d7f6c474cc8a1491d6a9fabad45',
             codeId: 945535637,
-            reward_name: '签到小游戏翻倍得积分'
+            reward_name: '安柠牛逼'
         })
     },
     doVideoReward: async (axios, options) => {
