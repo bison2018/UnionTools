@@ -1,4 +1,4 @@
-﻿const os = require('os')
+const os = require('os')
 const path = require('path')
 const fs = require('fs-extra')
 var moment = require('moment');
@@ -52,89 +52,95 @@ let scheduler = {
         scheduler.selectedTasks = [];
         scheduler.taskKey = 'default';
     },
-
-   buildQueues: async () => {
-    let queues = [];
-    let taskNames = Object.keys(tasks);
-    for (let taskName of taskNames) {
-      let options = tasks[taskName].options;
-      let willTime = moment(randomDate(options));
-      let waitTime = options.dev ? 0 : Math.floor(Math.random() * 600);
-      if (options) {
-        if (options.isCircle || options.dev) {
-          willTime = moment().startOf("days");
+    updateTaskFile: (task, newTask) => {
+        let taskJson = fs.readFileSync(process.env.taskfile).toString('utf-8')
+        taskJson = JSON.parse(taskJson)
+        let taskindex = taskJson.queues.findIndex(q => q.taskName === task.taskName)
+        if (taskindex !== -1) {
+            taskJson.queues[taskindex] = {
+                ...taskJson.queues[taskindex],
+                ...newTask
+            }
         }
-        if (options.startTime) {
-          willTime = moment().startOf("days").add(options.startTime, "seconds");
+        scheduler.taskJson = taskJson
+        fs.writeFileSync(scheduler.taskFile, JSON.stringify(scheduler.taskJson))
+    },
+    buildQueues: async (taskNames, queues) => {
+        for (let taskName of taskNames) {
+            let options = tasks[taskName].options || {}
+            let willTime = moment(randomDate(options));
+            // 任务的随机延迟时间
+            let waitTime = options.dev ? 0 : Math.floor(Math.random() * (options.waitTime || 60))
+            if (options) {
+                if (options.isCircle || options.dev) {
+                    willTime = moment().startOf('days');
+                }
+                if (typeof options.startTime === 'number') {
+                    willTime = moment().startOf('days').add(options.startTime, 'seconds');
+                }
+                if (options.ignoreRelay) {
+                    waitTime = 0;
+                }
+            }
+            if (scheduler.isTryRun) {
+                console.info('tryRun模式忽略执行延迟')
+                willTime = moment().startOf('days');
+                waitTime = 0;
+            }
+            queues.push({
+                taskName: taskName,
+                taskState: 0,
+                willTime: willTime.format('YYYY-MM-DD 00:00:00'),
+                waitTime: waitTime
+            })
         }
-        if (options.ignoreRelay) {
-          waitTime = 0;
+        return queues
+    },
+    getSomeNewTaskNames: (existsTasks, newAllTaskNames) => {
+        let existsTaskNames = existsTasks.map(t => t.taskName)
+        let notExistsTaskNames = newAllTaskNames.filter(n => existsTaskNames.indexOf(n) === -1)
+        return notExistsTaskNames
+    },
+    initTasksQueue: async () => {
+        const today = moment().format('YYYYMMDD')
+        if (!fs.existsSync(scheduler.taskFile)) {
+            console.info('任务配置文件不存在，创建配置中')
+            let queues = await scheduler.buildQueues(Object.keys(tasks), [])
+            fs.ensureFileSync(scheduler.taskFile)
+            fs.writeFileSync(scheduler.taskFile, JSON.stringify({
+                today,
+                queues
+            }))
+        } else {
+            let taskJson = fs.readFileSync(scheduler.taskFile).toString('utf-8')
+            taskJson = JSON.parse(taskJson)
+            if (taskJson.today !== today) {
+                console.info('日期已变更，重新生成任务配置')
+                let queues = await scheduler.buildQueues(Object.keys(tasks), [])
+                fs.writeFileSync(scheduler.taskFile, JSON.stringify({
+                    ...taskJson,
+                    rewards: {},
+                    today,
+                    queues
+                }))
+            } else if (taskJson.queues.length < Object.keys(tasks).length) {
+                console.info('数量已变更，追加新的任务配置')
+                let queues = await scheduler.buildQueues(
+                    scheduler.getSomeNewTaskNames(
+                        taskJson.queues,
+                        Object.keys(tasks)
+                    ),
+                    taskJson.queues || []
+                )
+                fs.writeFileSync(scheduler.taskFile, JSON.stringify({
+                    ...taskJson,
+                    today,
+                    queues
+                }))
+            }
         }
-      }
-      if (scheduler.isTryRun) {
-        willTime = moment().startOf("days");
-        waitTime = 0;
-      }
-      queues.push({
-        taskName: taskName,
-        taskState: 0,
-        willTime: willTime.format("YYYY-MM-DD HH:mm:ss"),
-        waitTime: waitTime,
-      });
-    }
-    return queues;
-  },
- initTasksQueue: async () => {
-    const today = moment().format("YYYYMMDD");
-    if (!fs.existsSync(scheduler.taskFile)) {
-      console.log("📑 任务配置文件不存在，创建配置中");
-      let queues = await scheduler.buildQueues();
-      fs.createFileSync(scheduler.taskFile);
-      fs.writeFileSync(
-        scheduler.taskFile,
-        JSON.stringify({
-          today,
-          queues,
-        })
-      );
-      console.log("📑 任务配置文件创建完毕 等待5秒再继续");
-      // eslint-disable-next-line no-unused-vars
-      await new Promise((resolve, reject) => setTimeout(resolve, 5 * 1000));
-    } else {
-      let taskJson = fs.readFileSync(scheduler.taskFile).toString("utf-8");
-      taskJson = JSON.parse(taskJson);
-      if (taskJson.today !== today) {
-        console.log("📑  日期已变更，重新生成任务配置");
-        let queues = await scheduler.buildQueues();
-        fs.writeFileSync(
-          scheduler.taskFile,
-          JSON.stringify({
-            today,
-            queues,
-          })
-        );
-        console.log("📑 任务配置文件更新完毕 等待5秒再继续");
-        // eslint-disable-next-line no-unused-vars
-        await new Promise((resolve, reject) => setTimeout(resolve, 5 * 1000));
-      }
-
-      if (taskJson.queues.length !== Object.keys(tasks).length) {
-        console.log("📑 数量已变更，重新生成任务配置");
-        let queues = await scheduler.buildQueues();
-        fs.writeFileSync(
-          scheduler.taskFile,
-          JSON.stringify({
-            today,
-            queues,
-          })
-        );
-        console.log("📑 任务配置文件更新完毕 等待5秒再继续");
-        // eslint-disable-next-line no-unused-vars
-        await new Promise((resolve, reject) => setTimeout(resolve, 5 * 1000));
-      }
-    }
-    scheduler.today = today;
-  },
+        scheduler.today = today
+    },
     genFileName(command) {
         if (process.env.asm_func === 'true') {
             // 暂不支持持久化配置，使用一次性执行机制，函数超时时间受functions.timeout影响
@@ -146,7 +152,7 @@ let scheduler = {
         }
         scheduler.taskFile = path.join(dir, `taskFile_${command}_${scheduler.taskKey}.json`)
         process.env['taskfile'] = scheduler.taskFile
-        scheduler.today = moment().format('YYYYMMDDHHSS')
+        scheduler.today = moment().format('YYYYMMDD')
         let maskFile = path.join(dir, `taskFile_${command}_${scheduler.taskKey.replaceWithMask(2, 3)}.json`)
         console.info('获得配置文件', maskFile, '当前日期', scheduler.today)
     },
@@ -226,8 +232,8 @@ let scheduler = {
         scheduler.isTryRun = tryrun
         scheduler.taskKey = taskKey || 'default'
         if (scheduler.isTryRun) {
-            console.info('!!!安柠提示您已进入高速通道，安全开车!!!')
-            await new Promise((resolve) => setTimeout(resolve, 3000))
+            console.info('!!!当前运行在TryRun模式，仅建议在测试时运行!!!')
+            await new Promise((resolve) => setTimeout(resolve, 300))
         }
         process.env['taskKey'] = [command, scheduler.taskKey].join('_')
         process.env['command'] = command
@@ -251,129 +257,131 @@ let scheduler = {
             console.info('将只执行选择的任务', selectedTasks.join(','))
         }
 
-    if (will_tasks.length) {
-      //TODO: deprecated Cookies will be deleted on TryRun mode
-      // if (scheduler.isTryRun) {
-      //   console.log("👉 TryRun模式将清除CK操作");
-      //   await delCookiesFile([command, scheduler.taskKey].join("_"));
-      // }
-      // 初始化处理
-      let init_funcs = {};
-      let init_funcs_result = {};
-      for (let task of will_tasks) {
-        let ttt = tasks[task.taskName];
-        let tttOptions = ttt.options || {};
-        let savedCookies =
-          getCookies([command, scheduler.taskKey].join("_")) ||
-          tttOptions.cookies;
-        let request = _request(savedCookies);
-
-        if (tttOptions.init) {
-          if (
-            Object.prototype.toString.call(tttOptions.init) ===
-            "[object AsyncFunction]"
-          ) {
-            let hash = crypto
-              .createHash("md5")
-              .update(tttOptions.init.toString())
-              .digest("hex");
-            if (!(hash in init_funcs)) {
-              init_funcs_result[task.taskName + "_init"] = await tttOptions[
-                "init"
-              ](request, savedCookies);
-              init_funcs[hash] = task.taskName + "_init";
-            } else {
-              init_funcs_result[task.taskName + "_init"] =
-                init_funcs_result[init_funcs[hash]];
+        if (will_tasks.length) {
+            if (scheduler.isTryRun) {
+                await delCookiesFile([command, scheduler.taskKey].join('_'))
             }
-          } else {
-            console.log("not apply");
-          }
+
+            // 初始化处理
+            let init_funcs = {}
+            let init_funcs_result = {}
+            for (let task of will_tasks) {
+                process.env['current_task'] = task.taskName
+                let ttt = tasks[task.taskName] || {}
+                let tttOptions = ttt.options || {}
+
+                let savedCookies = await getCookies([command, scheduler.taskKey].join('_')) || tttOptions.cookies
+                let request = _request(savedCookies)
+
+                if (tttOptions.init) {
+                    if (Object.prototype.toString.call(tttOptions.init) === '[object AsyncFunction]') {
+                        let hash = crypto.createHash('md5').update(tttOptions.init.toString()).digest('hex')
+                        if (!(hash in init_funcs)) {
+                            init_funcs_result[task.taskName + '_init'] = await tttOptions['init'](request, savedCookies)
+                            init_funcs[hash] = task.taskName + '_init'
+                        } else {
+                            init_funcs_result[task.taskName + '_init'] = init_funcs_result[init_funcs[hash]]
+                        }
+                    } else {
+                        console.info('not apply')
+                    }
+                } else {
+                    init_funcs_result[task.taskName + '_init'] = { request }
+                }
+            }
+
+            // 任务执行
+            // 多个任务同时执行会导致日志记录类型错误，所以仅在tryRun模式开启多个任务并发执行
+            let concurrency = scheduler.isTryRun ? 5 : 5
+            let queue = new PQueue({ concurrency });
+            console.info('调度任务中', '并发数', concurrency)
+            for (let task of will_tasks) {
+                scheduler.updateTaskFile(task, {
+                    // 限制执行时长2hours，runStopTime用于防止因意外原因导致isRunning=true的任务被中断，而未改变状态使得无法再次执行的问题
+                    runStopTime: moment().add(2, 'hours').format('YYYY-MM-DD HH:mm:ss'),
+                    isRunning: true
+                })
+                queue.add(async () => {
+                    process.env['current_task'] = task.taskName
+                    var st = new Date().getTime();
+                    try {
+                        if (task.waitTime) {
+                            console.info('延迟执行', task.taskName, task.waitTime, 'seconds')
+                            await new Promise((resolve, reject) => setTimeout(resolve, task.waitTime * 0))
+                        }
+
+                        let ttt = tasks[task.taskName]
+                        if (Object.prototype.toString.call(ttt.callback) === '[object AsyncFunction]') {
+                            await ttt.callback.apply(this, Object.values(init_funcs_result[task.taskName + '_init']))
+                        } else {
+                            console.info('任务执行内容空')
+                        }
+
+                        let isupdate = false
+                        let newTask = {}
+                        if (ttt.options) {
+                            if (!ttt.options.isCircle) {
+                                newTask.taskState = 1
+                                isupdate = true
+                            }
+                            if (ttt.options.isCircle && ttt.options.intervalTime) {
+                                newTask.willTime = moment().add(ttt.options.intervalTime, 'seconds').format('YYYY-MM-DD 00:00:00')
+                                isupdate = true
+                            }
+                        } else {
+                            newTask.taskState = 1
+                            isupdate = true
+                        }
+
+                        if (isupdate) {
+                            scheduler.updateTaskFile(task, newTask)
+                        }
+                    } catch (err) {
+                        if (err instanceof TryNextEvent) {
+                            console.info(err.message)
+                        } else if (err instanceof CompleteEvent) {
+                            console.info(err.message)
+                            let newTask = {
+                                failNum: 0,
+                                taskState: 1
+                            }
+                            scheduler.updateTaskFile(task, newTask)
+                        } else {
+                            console.info('任务错误：', err)
+                            if (task.failNum > 5) {
+                                console.error('任务错误次数过多，停止该任务后续执行')
+                                let newTask = {
+                                    taskState: 2,
+                                    taskRemark: '错误过多停止'
+                                }
+                                console.notify('任务错误次数过多，停止该任务后续执行')
+                                scheduler.updateTaskFile(task, newTask)
+                            } else {
+                                let newTask = {
+                                    failNum: task.failNum ? (parseInt(task.failNum) + 1) : 1
+                                }
+                                scheduler.updateTaskFile(task, newTask)
+                            }
+                        }
+                    }
+                    finally {
+                        var time = new Date().getTime() - st;
+                        console.info(task.taskName, '执行用时', Math.floor(time / 1000), '秒')
+                        scheduler.updateTaskFile(task, {
+                            isRunning: false,
+                            time
+                        })
+                    }
+                    delete process.env.current_task
+                })
+            }
+            await queue.onIdle()
+            await console.sendLog()
         } else {
-          init_funcs_result[task.taskName + "_init"] = { request };
+            console.info('暂无需要执行的任务')
         }
-      }
-
-      // 任务执行
-      
-      let concurrency = scheduler.isTryRun ? 1 : 1
-      let queue = new PQueue({ concurrency: 1 });
-      console.log("👉 调度任务中", "并发数", 1);
-      for (let task of will_tasks) {
-        queue.add(async () => {
-          try {
-            if (task.waitTime) {
-              console.log(
-                "☕ 延迟执行",
-                task.taskName,
-                task.waitTime,
-                "seconds"
-              );
-              // eslint-disable-next-line no-unused-vars
-              await new Promise((resolve, reject) =>
-                setTimeout(resolve, task.waitTime * 1000)
-              );
-            }
-
-            let ttt = tasks[task.taskName];
-            if (
-              Object.prototype.toString.call(ttt.callback) ===
-              "[object AsyncFunction]"
-            ) {
-              await ttt.callback.apply(
-                this,
-                Object.values(init_funcs_result[task.taskName + "_init"])
-              );
-            } else {
-              console.log("❌ 任务执行内容空");
-            }
-
-            let isupdate = false;
-            let newTask = {};
-            if (ttt.options) {
-              if (!ttt.options.isCircle) {
-                newTask.taskState = 1;
-                isupdate = true;
-              }
-              if (ttt.options.isCircle && ttt.options.intervalTime) {
-                newTask.willTime = moment()
-                  .add(ttt.options.intervalTime, "seconds")
-                  .format("YYYY-MM-DD HH:mm:ss");
-                isupdate = true;
-              }
-            } else {
-              newTask.taskState = 1;
-              isupdate = true;
-            }
-
-            if (isupdate) {
-              let taskindex = queues.findIndex(
-                (q) => q.taskName === task.taskName
-              );
-              if (taskindex !== -1) {
-                taskJson.queues[taskindex] = {
-                  ...task,
-                  ...newTask,
-                };
-              }
-              fs.writeFileSync(scheduler.taskFile, JSON.stringify(taskJson));
-              console.log("📑 任务配置文件更新完毕 等待5秒再继续");
-              // eslint-disable-next-line no-unused-vars
-              await new Promise((resolve, reject) =>
-                setTimeout(resolve, 5 * 1000)
-              );
-            }
-          } catch (err) {
-            console.log("❌ 任务错误：", err);
-          }
-        });
-      }
-      await queue.onIdle();
-    } else {
-      console.log("⭕ 暂无需要执行的任务");
     }
-  },
-};
+}
 module.exports = {
     scheduler
 }
