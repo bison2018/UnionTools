@@ -101,7 +101,7 @@ var taskcallback = {
             // "latitude": 26.611770629882812,
             // "longitude": 106.63581085205078,
             "sdk_version": "3.3.0.3",
-            "user_agent": "Mozilla\/5.0 (Linux; Android 9; VKY-AL00 Build\/HUAWEIVKY-AL00; wv) AppleWebKit\/537.36 (KHTML, like Gecko) Version\/4.0 Chrome\/86.0.4240.198 Mobile Safari\/537.36",
+            "user_agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148     unicom{version:iphone_c@8.0200}{systemVersion:dis}{yw_code:}",
             "extra": {
                 // "ad_slot_type": 7,
                 // "oaid": "ebdde3b9-def7-6cc3-fdfe-9bfff7ce4126",
