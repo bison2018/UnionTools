@@ -1,16 +1,22 @@
-name: 联通多账号
+name: 多账户
+
 
 on:
-  branches: [ main ]
+  
+  push: # push触发
+    branches: [ main ]
   workflow_dispatch: # 手动触发
   schedule: # 计划任务触发
-#    - cron: '*/30 20-23,0-16 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
+    #- cron: '*/30 20-23,0-15 * * *' # cron表达式，Actions时区是UTC时间，所以要往前推8个小时(4-23)
     - cron: '0 */3 * * *'
+    
 
 jobs:
   daily-task:
     if: github.event.repository.owner.id == github.event.sender.id
 
+    
+    
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,7 +31,7 @@ jobs:
       uses: actions/checkout@v2
       
     # 设置服务器时区为东八区 
-    - name: Timezone CST +8
+    - name: Set time zone
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
 
     - name: Use Node.js ${{ matrix.node-version }}
@@ -68,11 +74,12 @@ jobs:
 
     # 运行 unicom 签到任务
     - name: Run unicom daily task
+      
       env:
         user: ${{secrets.unicom_user}}
         password: ${{secrets.unicom_password}}
-        user2: ${{secrets.unicom_user2}}
-        password2: ${{secrets.unicom_password2}}
+                user: ${{secrets.unicom_user2}}
+        password: ${{secrets.unicom_password2}}
         appid: ${{secrets.unicom_appid}}
         notify_sctkey: ${{secrets.NOTIFY_SCKEY}}
-      run: node index.js unicom --accountSn=1,2 --user-1=${user} --password-1=${password} --appid-1=${appid} --user-2=${user2} --password-2=${password2} --appid-2=${appid}
+      run: node index.js unicom --accountSn=1,2  --user-1=${user} --password-1=${password} --appid-1=${appid} --user-2=${user2} --password-2=${password2} --appid-2=${appid}
