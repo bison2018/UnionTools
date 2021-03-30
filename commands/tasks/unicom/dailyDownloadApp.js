@@ -413,7 +413,7 @@ var dailyDownloadApp = {
             url: 'http://163.177.92.27',
             headers: {
                 'Content-Type': ' application/octet-stream',
-                'User-Agent': 'Dalvik/2.1.0 (Linux; U; Android 6.0.1; VKY_AL00 Build/V417IR)'
+                'User-Agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko)'
             },
             method: 'post',
             responseType: 'arraybuffer',

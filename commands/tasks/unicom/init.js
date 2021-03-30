@@ -82,7 +82,7 @@ module.exports = async (axios, params) => {
       'deviceCode': device.deviceId, // IMEI
       'deviceId': device.deviceId,
       'deviceModel': device.deviceModel,
-      'deviceOS': device.android_version,
+      'deviceOS': device.iphone_c_version,
       'isRemberPwd': 'true',
       'keyVersion': '',
       'mobile': rsapublicKeyEncode(options.user + ''),
@@ -120,7 +120,7 @@ module.exports = async (axios, params) => {
       'deviceCode': device.deviceId, // IMEI
       'deviceId': device.deviceId,
       'deviceModel': device.deviceModel,
-      'deviceOS': device.android_version,
+      'deviceOS': device.iphone_c_version,
       'netWay': 'Wifi',
       'platformToken': '0867442035025655300000391200CN01',
       'pushPlatform': 'samsung',

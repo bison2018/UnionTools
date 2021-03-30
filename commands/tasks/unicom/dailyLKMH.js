@@ -209,7 +209,7 @@ var dailyLKMH = {
         activityId: activity.activityId,
         version: appInfo.version,
         orderId: '',
-        phoneType: 'android'
+        phoneType: 'iphone_c'
       }
 
       if (n < 3) {
@@ -228,7 +228,7 @@ var dailyLKMH = {
           activityId: activity.activityId,
           version: appInfo.version,
           orderId: params['orderId'],
-          phoneType: 'android'
+          phoneType: 'iphone_c'
         }
       }
 

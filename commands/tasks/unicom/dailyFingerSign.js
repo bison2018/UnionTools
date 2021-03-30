@@ -252,7 +252,7 @@ var dailyFingerSign = {
                         'type': '广告',
                         'integral': 10,
                         'orderId': params['orderId'],
-                        'phoneType': 'android',
+                        'phoneType': 'iphone_c',
                         'version': appInfo.version
                     }
                     advertTimes--

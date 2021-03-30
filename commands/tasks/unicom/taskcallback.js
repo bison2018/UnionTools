@@ -84,7 +84,7 @@ var taskcallback = {
         let media_extra = [
             ecs_token,
             options.user,
-            'android',
+            'iphone_c',
             params.arguments1,
             params.arguments2,
             orderId,// orderId
@@ -95,7 +95,7 @@ var taskcallback = {
 
         var data = {
             "oversea_version_type": 0,
-            "reward_name": `android-${params.remark1 || params.remark}-激励视频`,
+            "reward_name": `iphone_c-${params.remark1 || params.remark}-激励视频`,
             "reward_amount": 1,
             "network": 4,
             // "latitude": 26.611770629882812,
@@ -121,7 +121,7 @@ var taskcallback = {
                 // "mac": "10:44:00:73:74:BF",
                 // "uuid": "867442035025655",
                 // "uuid_md5": "8a4dac2481580bd94f8c4b17787b74cd",
-                // "os": "android",
+                // "os": "iphone_c",
                 // "client_ip": "111.121.67.62",
                 // "open_udid": "",
                 // "os_type": null,

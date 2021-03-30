@@ -227,7 +227,7 @@ var dailyYYY = {
           'currentTimes': advertTimes,
           'type': '广告',
           'orderId': params['orderId'],
-          'phoneType': 'android',
+          'phoneType': 'iphone_c',
           'version': appInfo.version
         }
         advertTimes--

@@ -233,7 +233,7 @@ var integral = {
     const useragent = buildUnicomUserAgent(options, 'p')
     let params = {
       'methodType': 'reward',
-      'deviceType': 'Android',
+      'deviceType': 'iphone_c',
       'clientVersion': appInfo.version,
       'isVideo': 'N'
     }
@@ -286,7 +286,7 @@ var integral = {
       method: 'post',
       data: transParams({
         'methodType': 'reward',
-        'deviceType': 'Android',
+        'deviceType': 'iphone_c',
         'clientVersion': appInfo.version,
         'isVideo': 'Y'
       })
