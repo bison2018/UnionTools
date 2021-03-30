@@ -92,9 +92,9 @@ var dailyBookRead = {
   doTask: async (request, options) => {
     await require('./rewardVideo').doTask(request, {
       ...options,
-      acid: 'AC20200521222721',
-      taskId: '93273c65ee2048c29b8e630a4b456cf0',
-      codeId: 945535616,
+      acid: 'AC20200728150217',
+      taskId: '96945964804e42299634340cd2650451',
+      codeId: 945535736,
       reward_name: '阅读计时器任务得积分'
     })
   }

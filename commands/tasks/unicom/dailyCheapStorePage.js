@@ -256,7 +256,7 @@ var dailyCheapStorePage = {
       'netWay': 'Wifi',
       'remark': '签到小游戏买什么都省申请便利店抽奖',
       'version': appInfo.unicom_version,
-      'codeId': 945535693
+      'codeId': 945535736
     }
     params['sign'] = signRewardVideoParams([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
     params['orderId'] = crypto.createHash('md5').update(new Date().getTime() + '').digest('hex')

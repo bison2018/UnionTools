@@ -72,13 +72,13 @@ var daily1GFlowTask = {
                 console.info('尝试完成看视频条件')
                 await require('./rewardVideo').doRewardNoQuery(axios, {
                     ...options,
-                    acid: '',
-                    taskId: '',
+                    acid: 'AC20200728150217',
+                    taskId: '96945964804e42299634340cd2650451',
                     arguments6: '',
                     arguments7: '',
                     arguments8: '',
                     arguments9: '',
-                    codeId: 945796512,
+                    codeId: 945535736,
                     reward_name: '签到页做任务得奖励',
                     remark: '签到积分翻倍',
                     jar

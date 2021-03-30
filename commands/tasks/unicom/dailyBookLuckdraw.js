@@ -78,7 +78,7 @@ var dailyBookLuckdraw = {
         do {
             if (times < 5) {
                 let params = {
-                    'arguments1': 'AC20200521222721',
+                    'arguments1': 'AC20200728150217',
                     'arguments2': 'GGPD',
                     'arguments3': '',
                     'arguments4': new Date().getTime(),
@@ -90,7 +90,7 @@ var dailyBookLuckdraw = {
                     'remark': '阅读每日读书福利广告1',
                     'remark1': '阅读每日读书福利广告1',
                     'version': appInfo.unicom_version,
-                    'codeId': 945535424
+                    'codeId': 945535736
                 }
 
                 params['sign'] = signRewardVideoParams([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
