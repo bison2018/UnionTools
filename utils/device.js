@@ -15,20 +15,20 @@ function generateMixed(n) {
 
 
 var appInfo = {
-    version: 8.0200,
+    version: 'iphone_c@8.0200',
     unicom_version: 'iphone_c@8.0200',
     app_name: '手机营业厅',
     package_name: 'com.sinovatech.unicom.ui'
 }
 var devices = [{
-    android_version: '12_2',
-    deviceBrand: 'iphone_c',
+    android_version: '12.2',
+    deviceBrand: 'iphone',
     deviceModel: '9,1',
     buildSn: '9,1',
     deviceId: generateMixed(15) + ''
 }, {
-    android_version: '12_2',
-    deviceBrand: 'iphone_c',
+    android_version: '12.2',
+    deviceBrand: 'iphone',
     deviceModel: '9,1',
     buildSn: '9,1',
     deviceId: generateMixed(15) + ''
