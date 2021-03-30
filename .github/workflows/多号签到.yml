@@ -73,8 +73,6 @@ jobs:
         password: ${{secrets.unicom_password}}
         user2: ${{secrets.unicom_user2}}
         password2: ${{secrets.unicom_password2}}
-        user3: ${{secrets.unicom_user3}}
-        password3: ${{secrets.unicom_password3}}
         appid: ${{secrets.unicom_appid}}
         notify_sctkey: ${{secrets.NOTIFY_SCKEY}}
-      run: node index.js unicom --accountSn=1,2,3 --user-1=${user} --password-1=${password} --appid-1=${appid} --user-2=${user2} --password-2=${password2} --appid-2=${appid} --user-3=${user3} --password-3=${password3} --appid-3=${appid}
+      run: node index.js unicom --accountSn=1,2 --user-1=${user} --password-1=${password} --appid-1=${appid} --user-2=${user2} --password-2=${password2} --appid-2=${appid}
