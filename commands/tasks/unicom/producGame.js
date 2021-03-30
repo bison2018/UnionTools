@@ -585,8 +585,8 @@ var producGame = {
             'arguments8': '',
             'arguments9': '',
             'netWay': 'Wifi',
-            'remark1': '安柠牛逼',
-            'remark': '安柠牛逼',
+            'remark1': '游戏频道看视频得积分',
+            'remark': '游戏视频任务积分',
             'version': appInfo.unicom_version,
             'codeId': 945535736
         }
