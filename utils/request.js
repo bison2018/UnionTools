@@ -102,7 +102,7 @@ module.exports = cookies => {
 
   service.interceptors.request.use(async config => {
     if (!('user-agent' in config.headers)) {
-      config.headers['user-agent'] = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.183 Safari/537.36'
+      config.headers['user-agent'] = 'Mozilla/5.0 (iPhone; CPU iPhone OS 12_1_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0 Mobile/15E148 Safari/604.1'
     }
     let jar = config.jar
     if (!jar) {

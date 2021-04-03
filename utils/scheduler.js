@@ -290,8 +290,8 @@ let scheduler = {
       }
 
       // 任务执行
-      let queue = new PQueue({ concurrency: 2 });
-      console.log("👉 调度任务中", "并发数", 2);
+      let queue = new PQueue({ concurrency: 1 });
+      console.log("👉 调度任务中", "并发数", 1);
       for (let task of will_tasks) {
         queue.add(async () => {
           try {

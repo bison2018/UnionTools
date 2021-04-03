@@ -89,9 +89,9 @@ var woyaoliantong = {
     // 2 == doubling ? "618c46bbd8334754868c86ea97688f60" : "627292f1243148159c58fd58917c3e67";
     await require('./rewardVideo').doTask(axios, {
       ...options,
-      acid: 'AC20200611152252',
-      taskId: '627292f1243148159c58fd58917c3e67',
-      codeId: 945369805,
+      acid: 'AC20200728150217',
+      taskId: '96945964804e42299634340cd2650451',
+      codeId: 945535736,
       reward_name: '积分商城小游戏',
       limit: 1
     })
