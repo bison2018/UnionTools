@@ -15,9 +15,9 @@ String.prototype.replaceWithMask = function (start, end) {
 
 const randomDate = (options) => {
     let startDate = moment();
-    let endDate = moment().endOf('days').subtract(2, 'hours');
+    let endDate = moment().endOf('days').subtract(24, 'hours');
 
-    let defaltMinStartDate = moment().startOf('days').add('4', 'hours')
+    let defaltMinStartDate = moment().startOf('days').add('2', 'hours')
     if (startDate.isBefore(defaltMinStartDate, 'minutes')) {
         startDate = defaltMinStartDate
     }
@@ -70,7 +70,7 @@ let scheduler = {
             let options = tasks[taskName].options || {}
             let willTime = moment(randomDate(options));
             // 任务的随机延迟时间
-            let waitTime = options.dev ? 0 : Math.floor(Math.random() * (options.waitTime || 300))
+            let waitTime = options.dev ? 0 : Math.floor(Math.random() * (options.waitTime || 50))
             if (options) {
                 if (options.isCircle || options.dev) {
                     willTime = moment().startOf('days');
