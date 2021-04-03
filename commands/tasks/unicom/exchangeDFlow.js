@@ -226,9 +226,9 @@ var exchangeDFlow = {
     },
     doCircleCheck: async (axios, options) => {
         // 可使用 --exchangeDFlowCircle-minFlow 200 选项指定流量检查最小值
-        let { 'exchangeDFlowCircle-minFlow': minFlow = 200 } = options
+        let { 'exchangeDFlowCircle-minFlow': minFlow = 0 } = options
         if (typeof minFlow !== 'number') {
-            minFlow = 200
+            minFlow = 0
         }
         // 可使用 --exchangeDFlowCircle-endMinute 45 选项指定距离0点的间隔分钟数，不足endMinute分钟时不再兑换流量
         let { 'exchangeDFlowCircle-endMinute': endMinute = 45 } = options

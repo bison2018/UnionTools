@@ -7,6 +7,7 @@ const err = (error) => {
   return Promise.reject(error)
 }
 
+
 var parseDefaultCookie = function (cookies) {
   let cookie = []
   if (Object.prototype.toString.call(cookies) == '[object String]') {

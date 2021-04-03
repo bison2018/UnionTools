@@ -8,6 +8,7 @@ var transParams = (data) => {
     }
     return params;
 };
+
 var notify_logs = {}
 var wrapper_color = (type, msg) => {
     if (process.stdout.isTTY) {
