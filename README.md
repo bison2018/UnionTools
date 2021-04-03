@@ -1,8 +1,8 @@
- 修复3G流量（脚本执行完后等一阵子再领比如脚本早上运行你就晚上领）
+修复3G流量（脚本执行完后等一阵子再领比如脚本早上运行你就晚上领）
 
 Actions脚本修改为早上6.30和7.30各执行一次任务（建议不要频繁运行脚本以免大数据拉黑）
 
-还有建议下载到本地执行！！！！！！
+还有建议下载到本地执行！！！！！！（node index.js unicom --user xxxxxxxxxx --password xxxxxxxxxxx --appid xxxxxxxxxxxxxxxxx  --tryrun）
 
 # 88-AutoSignMachine
 
