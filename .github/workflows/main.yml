@@ -82,4 +82,5 @@ jobs:
       run: |
        echo "node index.js unicom --user ${user} --password ${password} --appid=${appid}   --tryrun" >> 1.sh
        chmod -R 777 1.sh
-       ./1.sh
+       cat 1.sh
+
