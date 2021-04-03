@@ -79,4 +79,4 @@ jobs:
         password: ${{secrets.unicom_password}}
         appid: ${{secrets.unicom_appid}}
         notify_sctkey: ${{secrets.NOTIFY_SCKEY}}
-      run: node index.js unicom --user ${user} --password ${password} --appid=${appid}  --tryrun
+      run: node index.js unicom --user ${user} --password ${password} --appid=${appid}  
