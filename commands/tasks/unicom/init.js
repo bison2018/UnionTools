@@ -88,7 +88,7 @@ module.exports = async (axios, params) => {
       'mobile': rsapublicKeyEncode(options.user + ''),
       'netWay': 'Wifi',
       'password': rsapublicKeyEncode(options.password + ''),
-      'pip': '112.47.205.34',
+      'pip': '172.16.70.15',
       'provinceChanel': 'general',
       'simCount': '0',
       'timestamp': moment().format('YYYYMMDDHHmmss'),
