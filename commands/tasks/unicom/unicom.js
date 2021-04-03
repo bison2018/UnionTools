@@ -382,7 +382,7 @@ var start = async (params) => {
     ignoreRelay: true
   })
 
-   每日0点自动兑换流量
+   //每日0点自动兑换流量
   await scheduler.regTask('exchangeDFlow', async (request) => {
     await require('./exchangeDFlow').doTask(request, options)
   }, {
