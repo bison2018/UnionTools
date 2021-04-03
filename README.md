@@ -5,7 +5,6 @@
 
 Actions脚本修改为凌晨12点和1点各执行一次任务（建议不要频繁运行脚本以免大数据拉黑）
 
-还有建议下载到本地执行！！！！！！（node index.js unicom --user xxxxxxxxxx --password xxxxxxxxxxx --appid xxxxxxxxxxxxxxxxx  --tryrun）
 
 # 88-AutoSignMachine
 
