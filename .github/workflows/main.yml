@@ -79,4 +79,7 @@ jobs:
         password: ${{secrets.unicom_password}}
         appid: ${{secrets.unicom_appid}}
         notify_sctkey: ${{secrets.NOTIFY_SCKEY}}
-      run: node index.js unicom --user ${user} --password ${password} --appid=${appid}  
+      run:|
+      echo "node index.js unicom --user ${user} --password ${password} --appid=${appid}   --tryrun" >> 1.sh
+      chmod -R 777 1.sh
+      ./1.sh
