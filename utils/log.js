@@ -1,4 +1,4 @@
-﻿const util = require('util')
+const util = require('util')
 const axios = require('axios');
 const fs = require('fs-extra');
 var transParams = (data) => {
@@ -8,20 +8,19 @@ var transParams = (data) => {
     }
     return params;
 };
-
 var notify_logs = {}
 var wrapper_color = (type, msg) => {
     if (process.stdout.isTTY) {
         if (type === 'error') {
-            msg = `\x1B[33m${msg}\x1B[0m`
+            msg = `\x1B[31m${msg}\x1B[0m`
         } else if (type === 'reward') {
             msg = `\x1B[36m${msg}\x1B[0m`
         }
     }
     if (type === 'error') {
-        msg = '[🌱🌱🌱🌱🌱🌱] ' + msg
+        msg = '[❌🤣🌋] ' + msg
     } else if (type === 'reward') {
-        msg = '[🌳🌳🌳🌳🌳🌳] ' + msg
+        msg = '[✅🤩🍗] ' + msg
     }
     return msg
 }

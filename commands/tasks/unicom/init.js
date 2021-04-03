@@ -123,7 +123,7 @@ module.exports = async (axios, params) => {
       'deviceOS': device.android_version,
       'netWay': 'Wifi',
       'platformToken': '0867442035025655300000391200CN01',
-      'pushPlatform': 'iPhone',
+      'pushPlatform': 'samsung',
       'reqtime': new Date().getTime(),
       'token_online': token_online,
       'version': appInfo.unicom_version,

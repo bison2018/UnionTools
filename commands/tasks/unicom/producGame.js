@@ -15,9 +15,9 @@ var transParams = (data) => {
 
 
 var deviceInfos = [
-    'm=9,1&o=12.2&a=12.28&p=1080*1920&f=iPhone&mm=5725&cf=1800&cc=8&qqversion=null',
-    'm=8,1N&o=13.1&a=13.1&p=1080*1920&f=iPhone&mm=5725&cf=1800&cc=8&qqversion=null',
-    'm=7,1&o=13.3&a=13.3&p=1080*1920&f=iPhone&mm=5725&cf=1800&cc=8&qqversion=null'
+    'm=VKY-AL00&o=9&a=28&p=1080*1920&f=HUAWEI&mm=5725&cf=1800&cc=8&qqversion=null',
+    'm=SM-G977N&o=7&a=24&p=1080*1920&f=samsung&mm=5725&cf=1800&cc=8&qqversion=null',
+    'm=Pixel&o=8&a=27&p=1080*1920&f=google&mm=5725&cf=1800&cc=8&qqversion=null'
 ]
 var deviceInfo = deviceInfos[Math.floor(Math.random() * deviceInfos.length)]
 
@@ -222,7 +222,7 @@ var producGame = {
         const useragent = buildUnicomUserAgent(options, 'p')
         let params = {
             'methodType': 'popularGames',
-            'deviceType': 'Android,ios',
+            'deviceType': 'Android',
             'clientVersion': appInfo.version,
         }
         let { data, config } = await axios.request({
@@ -284,7 +284,7 @@ var producGame = {
         const useragent = buildUnicomUserAgent(options, 'p')
         let params = {
             'methodType': 'record',
-            'deviceType': 'Android,ios',
+            'deviceType': 'Android',
             'clientVersion': appInfo.version,
             'gameId': gameId,
             'taskId': ''
@@ -313,7 +313,7 @@ var producGame = {
             'videoIntegral': '0',
             'isVideo': 'Y',
             'clientVersion': appInfo.version,
-            'deviceType': 'Android,ios'
+            'deviceType': 'Android'
         }
         let { data, config } = await axios.request({
             headers: {
@@ -491,7 +491,7 @@ var producGame = {
             'userNumber': options.user,
             'methodType': 'flowGet',
             'gameId': gameId,
-            'deviceType': 'Android,ios',
+            'deviceType': 'Android',
             'clientVersion': appInfo.version
         }
         let { data } = await axios.request({
@@ -522,7 +522,7 @@ var producGame = {
         let params = {
             'methodType': 'taskGetReward',
             'taskCenterId': taskCenterId,
-            'deviceType': 'Android,ios',
+            'deviceType': 'Android',
             'clientVersion': appInfo.version,
         }
         let { data } = await axios.request({
