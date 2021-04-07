@@ -360,17 +360,15 @@ var producGame = {
     },
     doGameFlowTask: async (axios, options) => {
         let { popularList: allgames, jar } = await producGame.popularGames(axios, options)
-      let games = allgames
+        let games = allgames.filter(g => g.state === '0')
         console.info('剩余未完成game', games.length)
         let queue = new PQueue({ concurrency: 2 });
-
-        let others = ['1110422106']
 
         console.info('调度任务中', '并发数', 2)
         for (let game of games) {
             queue.add(async () => {
                 console.info(game.name)
-                if (others.indexOf(game.gameCode) !== -1) {
+                if (game.qqMark === "N") {
                     await require('./xiaowogameh5').playGame(axios, {
                         ...options,
                         game
@@ -400,7 +398,7 @@ var producGame = {
             await new Promise((resolve, reject) => setTimeout(resolve, (Math.floor(Math.random() * 10) + 15) * 1000))
             await producGame.gameFlowGet(axios, {
                 ...options,
-                gameId: game.gameId
+                gameId: game.id
             })
         }
     },
@@ -479,7 +477,8 @@ var producGame = {
         })
         if (data) {
             console.info(data.msg)
-            return data.data
+            let {popularList} = await producGame.popularGames(axios, options)
+            return popularList;
         } else {
             console.error('记录失败')
         }
@@ -511,7 +510,7 @@ var producGame = {
             if (data.msg.indexOf('防刷策略接口校验不通过') !== -1) {
                console.error('获取奖励失败')
             }
-            console.reward('flow', '100m')
+            console.reward('flow', data.data.flow + 'm')
         } else {
             console.error('获取奖励失败')
         }
@@ -599,7 +598,7 @@ var producGame = {
     },
     doTodayDailyTask: async (axios, options) => {
 
-        let { games: v_games } = await producGame.getTaskList(axios, options)
+        /* let { games: v_games } = await producGame.getTaskList(axios, options)
         let video_task = v_games.find(d => d.task_type === 'video')
 
         if (video_task.reachState === '0') {
@@ -620,7 +619,7 @@ var producGame = {
                 })
                 ++i
             }
-        }
+        } */
 
         let { games } = await producGame.getTaskList(axios, options)
         let today_task = games.find(d => d.task_type === 'todayTask')
@@ -635,8 +634,8 @@ var producGame = {
                 ...options,
                 taskCenterId: today_task.id
             })
-            console.reward('flow', '200m')
-            console.info('领取完成今日任务流量+200m')
+            console.reward('flow', '100m')
+            console.info('领取完成今日任务流量+100m')
         } else if (today_task.reachState === '2') {
             console.info('每日日常任务已完成')
         }
