@@ -50,11 +50,11 @@ var start = async (params) => {
     await require('./woTree').doTask(request, options)
   }, taskOption)
 
-  await scheduler.regTask('dailyBookRead', async (request) => {
+ // await scheduler.regTask('dailyBookRead', async (request) => {
     // 首页-小说-阅读越有礼打卡赢话费
-    await require('./dailyBookRead').doTask(request, options)
-    await require('./dailyVideoBook').doTask(request, options)
-  }, taskOption)
+ //   await require('./dailyBookRead').doTask(request, options)
+  //  await require('./dailyVideoBook').doTask(request, options)
+//  }, taskOption)
 
   // 首页-小说-会员日活动-签到抽大奖
  // await scheduler.regTask('dailyBookMemberDay', async (request) => {
@@ -63,10 +63,10 @@ var start = async (params) => {
 //  }, taskOption)
 
   // 首页-小说-阅读现金红包雨-看视频得积分
-  await scheduler.regTask('dailyRedbagRainVideoIntegral', async (request) => {
+ // await scheduler.regTask('dailyRedbagRainVideoIntegral', async (request) => {
     // 看视频得积分
-    await require('./dailyRedbagRain').dovideoIntegralTask(request, options)
-  }, taskOption)
+ //   await require('./dailyRedbagRain').dovideoIntegralTask(request, options)
+//  }, taskOption)
 
   // 首页-小说-阅读现金红包雨
   // 活动已下线
@@ -82,18 +82,18 @@ var start = async (params) => {
   // 首页-小说-读满10章赢好礼
   await scheduler.regTask('dailyBookRead10doDraw', async (request) => {
     // 首页-小说-读满10章赢好礼
-    await require('./dailyVideoBook').read10doDraw(request, options)
+   // await require('./dailyVideoBook').read10doDraw(request, options)
     // 首页-签到有礼-免流量得福利-3积分天天拿(阅读打卡) 已下线
     // await require('./dailyVideoBook').giftBoints(request, options)
   }, taskOption)
 
   // 首页-小说-章节详情-看视频领积分
-  await scheduler.regTask('dailyBookVideo', async (request) => {
+ // await scheduler.regTask('dailyBookVideo', async (request) => {
     // 首页-小说-读满10章赢好礼-看视频领2积分
-    await require('./dailyVideoBook').dovideoIntegralTask(request, options)
+  //  await require('./dailyVideoBook').dovideoIntegralTask(request, options)
     // 首页-小说-章节详情-看视频领积分
-    await require('./dailyBookVideo').doTask(request, options)
-  }, taskOption)
+  //  await require('./dailyBookVideo').doTask(request, options)
+//  }, taskOption)
 
  // await scheduler.regTask('dailyBookLuckdraw', async (request) => {
     // 首页-小说-阅读福利抽大奖
@@ -300,19 +300,19 @@ var start = async (params) => {
   }, taskOption)
 
   // 首页-积分商城-火热抢购-三只松鼠-看视频得积分
-  await scheduler.regTask('dailyShopVideoIntegral', async (request) => {
-    await require('./dailyShop').dovideoIntegralTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyShopVideoIntegral', async (request) => {
+ //   await require('./dailyShop').dovideoIntegralTask(request, options)
+//  }, taskOption)
 
   // 服务-办理-套餐变更-赚积分
-  await scheduler.regTask('dailyPackageIntegral', async (request) => {
-    await require('./dailyOtherRewardVideo').doPackeageChangeVideoIntegralTask(request, options)
-  }, taskOption)
+//  await scheduler.regTask('dailyPackageIntegral', async (request) => {
+//    await require('./dailyOtherRewardVideo').doPackeageChangeVideoIntegralTask(request, options)
+ // }, taskOption)
 
   // 服务-查询-电子发票-赚积分
-  await scheduler.regTask('dailyWisdomActivityIntegral', async (request) => {
-    await require('./dailyOtherRewardVideo').doWisdomActivityIntegralTask(request, options)
-  }, taskOption)
+ // await scheduler.regTask('dailyWisdomActivityIntegral', async (request) => {
+ //   await require('./dailyOtherRewardVideo').doWisdomActivityIntegralTask(request, options)
+ // }, taskOption)
 
   // 福利社-聚人气-看视频得积分
   // await scheduler.regTask('doWelfareActivityIntegralTask', async (request) => {
