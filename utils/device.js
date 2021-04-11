@@ -15,13 +15,13 @@ function generateMixed(n) {
 
 
 var appInfo = {
-    version: 8.0200,
-    unicom_version: 'android@8.0200',
-    app_name: '手机营业厅',
+    version: 8.0600,
+    unicom_version: 'android@8.0600',
+    app_name: '中国联通',
     package_name: 'com.sinovatech.unicom.ui'
 }
 var devices = [{
-    android_version: '7.1.2',
+    android_version: '9',
     deviceBrand: 'samsung',
     deviceModel: 'SM-G977N',
     buildSn: 'LMY48Z',
