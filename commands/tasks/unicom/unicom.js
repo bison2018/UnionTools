@@ -285,14 +285,14 @@ var start = async (params) => {
   // })
 
   // 首页-知识-阅读答题赢好礼
-//  await scheduler.regTask('dailyBookAnswer', async (request) => {
- //   await require('./dailyBookAnswer').doTask(request, options)
- // }, taskOption)
+  await scheduler.regTask('dailyBookAnswer', async (request) => {
+    await require('./dailyBookAnswer').doTask(request, options)
+  }, taskOption)
 
   // 首页-积分乐园-集牛卡
  // await scheduler.regTask('newYearUserSign', async (request) => {
   //  await require('./newYearUserSign').doTask(request, options)
-  // }, taskOption)
+  //}, taskOption)
 
   // 首页-签到有礼-免费拿-猜拳拿奖
   await scheduler.regTask('dailyFingerSign', async (request) => {
@@ -300,9 +300,9 @@ var start = async (params) => {
   }, taskOption)
 
   // 首页-积分商城-火热抢购-三只松鼠-看视频得积分
- // await scheduler.regTask('dailyShopVideoIntegral', async (request) => {
-//    await require('./dailyShop').dovideoIntegralTask(request, options)
-//  }, taskOption)
+  await scheduler.regTask('dailyShopVideoIntegral', async (request) => {
+    await require('./dailyShop').dovideoIntegralTask(request, options)
+  }, taskOption)
 
   // 服务-办理-套餐变更-赚积分
 //  await scheduler.regTask('dailyPackageIntegral', async (request) => {
@@ -374,13 +374,13 @@ var start = async (params) => {
 
   // 清理领取某些未知方式的积分
   // 该处理可能会导致某些活动任务机会不足导致错误，所以执行时间要迟
- // await scheduler.regTask('dailyOtherRewardVideo', async (request) => {
-//    await require('./dailyOtherRewardVideo').cleanRewardVideo(request, options)
-//  }, {
-//    ...taskOption,
-//    startTime: 21.5 * 3600,
-//    ignoreRelay: true
-//  })
+  await scheduler.regTask('dailyOtherRewardVideo', async (request) => {
+    await require('./dailyOtherRewardVideo').cleanRewardVideo(request, options)
+  }, {
+    ...taskOption,
+    startTime: 21.5 * 3600,
+    ignoreRelay: true
+  })
 
   // 每日0点自动兑换流量
 //  await scheduler.regTask('exchangeDFlow', async (request) => {
