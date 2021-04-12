@@ -52,8 +52,8 @@ var start = async (params) => {
 
  // await scheduler.regTask('dailyBookRead', async (request) => {
     // 首页-小说-阅读越有礼打卡赢话费
- //   await require('./dailyBookRead').doTask(request, options)
- //   await require('./dailyVideoBook').doTask(request, options)
+//    await require('./dailyBookRead').doTask(request, options)
+///    await require('./dailyVideoBook').doTask(request, options)
  // }, taskOption)
 
   // 首页-小说-会员日活动-签到抽大奖
@@ -63,10 +63,10 @@ var start = async (params) => {
 //  }, taskOption)
 
   // 首页-小说-阅读现金红包雨-看视频得积分
- // await scheduler.regTask('dailyRedbagRainVideoIntegral', async (request) => {
+//  await scheduler.regTask('dailyRedbagRainVideoIntegral', async (request) => {
     // 看视频得积分
  //   await require('./dailyRedbagRain').dovideoIntegralTask(request, options)
- // }, taskOption)
+//  }, taskOption)
 
   // 首页-小说-阅读现金红包雨
   // 活动已下线
@@ -82,9 +82,9 @@ var start = async (params) => {
   // 首页-小说-读满10章赢好礼
   await scheduler.regTask('dailyBookRead10doDraw', async (request) => {
     // 首页-小说-读满10章赢好礼
-   await require('./dailyVideoBook').read10doDraw(request, options)
+    await require('./dailyVideoBook').read10doDraw(request, options)
     // 首页-签到有礼-免流量得福利-3积分天天拿(阅读打卡) 已下线
-     await require('./dailyVideoBook').giftBoints(request, options)
+    // await require('./dailyVideoBook').giftBoints(request, options)
   }, taskOption)
 
   // 首页-小说-章节详情-看视频领积分
@@ -285,34 +285,34 @@ var start = async (params) => {
   // })
 
   // 首页-知识-阅读答题赢好礼
- // await scheduler.regTask('dailyBookAnswer', async (request) => {
- //   await require('./dailyBookAnswer').doTask(request, options)
- // }, taskOption)
+  await scheduler.regTask('dailyBookAnswer', async (request) => {
+    await require('./dailyBookAnswer').doTask(request, options)
+  }, taskOption)
 
   // 首页-积分乐园-集牛卡
  // await scheduler.regTask('newYearUserSign', async (request) => {
   //  await require('./newYearUserSign').doTask(request, options)
-// }, taskOption)
+  //}, taskOption)
 
   // 首页-签到有礼-免费拿-猜拳拿奖
- // await scheduler.regTask('dailyFingerSign', async (request) => {
- //   await require('./dailyFingerSign').doTask(request, options)
- // }, taskOption)
+  await scheduler.regTask('dailyFingerSign', async (request) => {
+    await require('./dailyFingerSign').doTask(request, options)
+  }, taskOption)
 
   // 首页-积分商城-火热抢购-三只松鼠-看视频得积分
- // await scheduler.regTask('dailyShopVideoIntegral', async (request) => {
- //   await require('./dailyShop').dovideoIntegralTask(request, options)
- // }, taskOption)
+  await scheduler.regTask('dailyShopVideoIntegral', async (request) => {
+    await require('./dailyShop').dovideoIntegralTask(request, options)
+  }, taskOption)
 
   // 服务-办理-套餐变更-赚积分
- // await scheduler.regTask('dailyPackageIntegral', async (request) => {
+//  await scheduler.regTask('dailyPackageIntegral', async (request) => {
 //    await require('./dailyOtherRewardVideo').doPackeageChangeVideoIntegralTask(request, options)
 //  }, taskOption)
 
   // 服务-查询-电子发票-赚积分
-//  await scheduler.regTask('dailyWisdomActivityIntegral', async (request) => {
- //   await require('./dailyOtherRewardVideo').doWisdomActivityIntegralTask(request, options)
- // }, taskOption)
+  await scheduler.regTask('dailyWisdomActivityIntegral', async (request) => {
+    await require('./dailyOtherRewardVideo').doWisdomActivityIntegralTask(request, options)
+  }, taskOption)
 
   // 福利社-聚人气-看视频得积分
   // await scheduler.regTask('doWelfareActivityIntegralTask', async (request) => {
@@ -360,7 +360,7 @@ var start = async (params) => {
   // }, taskOption)
 
   // 话费购签到
- // await scheduler.regTask('hfgo', async (request) => {
+//  await scheduler.regTask('hfgo', async (request) => {
  //   await require('./hfgo').doTask(request, options)
 //  }, taskOption)
 
@@ -374,18 +374,18 @@ var start = async (params) => {
 
   // 清理领取某些未知方式的积分
   // 该处理可能会导致某些活动任务机会不足导致错误，所以执行时间要迟
- // await scheduler.regTask('dailyOtherRewardVideo', async (request) => {
- //   await require('./dailyOtherRewardVideo').cleanRewardVideo(request, options)
-//  }, {
-///    ...taskOption,
-//    startTime: 21.5 * 3600,
-//    ignoreRelay: true
-//  })
+  await scheduler.regTask('dailyOtherRewardVideo', async (request) => {
+    await require('./dailyOtherRewardVideo').cleanRewardVideo(request, options)
+  }, {
+    ...taskOption,
+    startTime: 21.5 * 3600,
+    ignoreRelay: true
+  })
 
   // 每日0点自动兑换流量
- // await scheduler.regTask('exchangeDFlow', async (request) => {
-//    await require('./exchangeDFlow').doTask(request, options)
-///  }, {
+//  await scheduler.regTask('exchangeDFlow', async (request) => {
+ //   await require('./exchangeDFlow').doTask(request, options)
+//  }, {
 //    ...taskOption,
 //    startTime: 0,
 //    startHours: 0,
