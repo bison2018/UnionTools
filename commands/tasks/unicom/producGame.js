@@ -225,7 +225,7 @@ var producGame = {
             'deviceType': 'Android',
             'clientVersion': appInfo.version,
         }
-        /* let { data, config } = await axios.request({
+        let { data, config } = await axios.request({
             baseURL: 'https://m.client.10010.com/',
             headers: {
                 "user-agent": useragent,
@@ -240,52 +240,6 @@ var producGame = {
             return {
                 jar: config.jar,
                 popularList: data.popularList || []
-            }
-        } else {
-            console.error('记录失败')
-        } */
-        let defaults = {
-            baseURL: 'https://m.client.10010.com/',
-            headers: {
-                "user-agent": useragent,
-                "referer": "https://img.client.10010.com",
-                "origin": "https://img.client.10010.com"
-            },
-            url: `/producGameApp`,
-            method: 'post',
-            data: transParams(params)
-        }
-        // 安卓
-        let {
-            data: androidData,
-            config
-        } = await axios.request(defaults)
-        // ios
-        let {
-            data: iosData
-        } = await axios.request(Object.assign({}, defaults, {
-            data: transParams(Object.assign({}, params, {
-                'deviceType': 'iOS'
-            }))
-        }));
-        if (androidData) {
-            let jar = config.jar,
-                popularList = androidData.popularList || [],
-                gameDeviceTypes = new Map();
-            androidData.popularList.forEach(e => gameDeviceTypes.set(e.id, "Android"));
-            if (iosData) {
-                let games = new Map();
-                // 合并去重
-                [...androidData.popularList, ...iosData.popularList].forEach(game => games.set(game.id, game));
-                popularList = [...games.values()];
-                // 取出ios任务
-                let iosTasks = iosData.popularList.filter(a => !androidData.popularList.some(i => i.id === a.id));
-                iosTasks.forEach(e => gameDeviceTypes.set(e.id, "iOS"));
-            }
-            return {
-                jar: jar,
-                gameDeviceTypes: gameDeviceTypes,
-                popularList: popularList
             }
         } else {
             console.error('记录失败')
@@ -414,8 +368,7 @@ var producGame = {
         for (let game of games) {
             queue.add(async () => {
                 console.info(game.name)
-                // 沙巴克传奇特殊处理
-                if (game.qqMark === "N" && game.id === "d9b73d461879497f9c5fb2ad9dacf783") {
+                if (game.qqMark === "N") {
                     await require('./xiaowogameh5').playGame(axios, {
                         ...options,
                         game
@@ -431,6 +384,11 @@ var producGame = {
                         jar,
                         game
                     })
+					await producGame.playGame(axios, {
+						...options,
+						jar,
+						game
+					})
                 }
             })
         }
@@ -438,15 +396,14 @@ var producGame = {
         await queue.onIdle()
 
         await new Promise((resolve, reject) => setTimeout(resolve, (Math.floor(Math.random() * 10) + 30) * 1000))
-        let { popularList: gameTasks, gameDeviceTypes } = await producGame.timeTaskQuery(axios, options)
-        games = gameTasks.filter(g => g.state === '1')
+        games = await producGame.timeTaskQuery(axios, options)
+        games = games.filter(g => g.state === '1')
         console.info('剩余未领取game', games.length)
         for (let game of games) {
             await new Promise((resolve, reject) => setTimeout(resolve, (Math.floor(Math.random() * 10) + 15) * 1000))
             await producGame.gameFlowGet(axios, {
                 ...options,
-                gameId: game.id,
-                deviceType: gameDeviceTypes.get(game.id) ?? "Android"
+                gameId: game.id
             })
         }
     },
@@ -525,19 +482,20 @@ var producGame = {
         })
         if (data) {
             console.info(data.msg)
-            return await producGame.popularGames(axios, options);
+            let {popularList} = await producGame.popularGames(axios, options)
+            return popularList;
         } else {
             console.error('记录失败')
         }
     },
     gameFlowGet: async (axios, options) => {
-        const { gameId, deviceType } = options
+        const { gameId } = options
         const useragent = buildUnicomUserAgent(options, 'p')
         let params = {
             'userNumber': options.user,
             'methodType': 'flowGet',
             'gameId': gameId,
-            'deviceType': deviceType,
+            'deviceType': 'Android',
             'clientVersion': appInfo.version
         }
         let { data } = await axios.request({
@@ -647,7 +605,6 @@ var producGame = {
 
         /* let { games: v_games } = await producGame.getTaskList(axios, options)
         let video_task = v_games.find(d => d.task_type === 'video')
-
         if (video_task.reachState === '0') {
             let n = parseInt(video_task.task) - parseInt(video_task.progress)
             console.info('领取视频任务奖励,剩余', n, '次')
