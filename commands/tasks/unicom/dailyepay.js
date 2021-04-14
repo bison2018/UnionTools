@@ -81,6 +81,7 @@ var dailyepay = {
                 'token': '',
                 'type': 02,
                 'version': appInfo.version,
+				'deviceId'：'868515038780134',
             })
         })
         if (data.resultCode === '0') {

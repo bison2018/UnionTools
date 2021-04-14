@@ -54,7 +54,8 @@ var dailyClubLottery = {
       data: {
         "ticket": searchParams.ticket,
         "ufc": "appcs",
-        "channel": "woapp"
+        "channel": "woapp",
+		'deviceId'：'868515038780134'
       }
     })
     return {
@@ -76,7 +77,8 @@ var dailyClubLottery = {
       method: 'post',
       data: {
         "act_id": "522",
-        "ap_id": "1358256940093804544"
+        "ap_id": "1358256940093804544",
+		"deviceId"："868515038780134"
       }
     })
     if (data.code === 200) {

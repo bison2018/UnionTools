@@ -82,14 +82,16 @@ let dailyBaWangcard = {
           netWay: "Wifi",
           remark1: "签到小游戏刮刮卡",
           remark: "签到页小游戏",
-          version: `android@8.0102`,
+          version: `android@8.0600`,
           codeId: 945363379,
+		  deviceId："868515038780134",
         };
         params["sign"] = sign([
           params.arguments1,
           params.arguments2,
           params.arguments3,
           params.arguments4,
+		  deviceId："868515038780134",
         ]);
         params["orderId"] = crypto
           .createHash("md5")
@@ -109,6 +111,7 @@ let dailyBaWangcard = {
           num: advertTimes,
           token: ecs_token,
           videoOrderNo: params["orderId"],
+		  deviceId："868515038780134",
         };
         let request = new UnicomRequest(axios, options);
         let timestamp = moment().format("YYYYMMDDHHmmss");
@@ -139,6 +142,7 @@ let dailyBaWangcard = {
         token: ecs_token,
         flag: "",
         taskId: "",
+		deviceId："868515038780134",
       };
       // https://wxapp.msmds.cn/h5/react_web/unicom/luckCardPage?ticket=nep4v4jza360c1dc9a946b8c51c892d7f3af8f02jadbs3o7&type=06&version=iphone_c@8.0102&timestamp=20210214112354&desmobile=这是电话号码&num=0&postage=494bef815366a0e8007c66d19f38ec07&duanlianjieabc=tbkd2&userNumber=这是电话号码
       let request = new UnicomRequest(axios, options);
@@ -172,7 +176,8 @@ let dailyBaWangcard = {
       arguments4: new Date().getTime(),
       arguments6: "517050707",
       netWay: "Wifi",
-      version: `android@8.0102`,
+      version: `android@8.0600`,
+	  deviceId："868515038780134",
     },
     {
       arguments1: "AC20200716103629", // acid
@@ -183,14 +188,16 @@ let dailyBaWangcard = {
       arguments7: "517050707",
       arguments8: "123456",
       arguments9: "4640b530b3f7481bb5821c6871854ce5",
+	  deviceId："868515038780134",
       orderId: crypto
         .createHash("md5")
         .update(new Date().getTime() + "")
         .digest("hex"),
       netWay: "Wifi",
       remark: "签到小游戏翻倍得积分",
-      version: `android@8.0102`,
+      version: `android@8.0600`,
       codeId: 945689604,
+	  deviceId："868515038780134",
     },
     "刮刮卡"
   ),

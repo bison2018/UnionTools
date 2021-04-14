@@ -94,7 +94,8 @@ var dailyFingerSign = {
             'remark1': '签到小游戏猜拳拿奖',
             'remark': '签到抽奖小游戏',
             'version': appInfo.unicom_version,
-            'codeId': codeId
+            'codeId': codeId,
+			'deviceId'：'868515038780134'
         }
         params['sign'] = signRewardVideoParams([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
         params['orderId'] = crypto.createHash('md5').update(new Date().getTime() + '').digest('hex')
@@ -179,7 +180,8 @@ var dailyFingerSign = {
             taskId: '627292f1243148159c58fd58917c3e67',
             codeId: 945689604,
             reward_name: '猜拳拿奖翻倍得积分',
-            limit: 1
+            limit: 1,
+			deviceId：'868515038780134'
         })
     },
     lookVideoDoubleResult: async (axios, options) => {
@@ -253,7 +255,8 @@ var dailyFingerSign = {
                         'integral': 10,
                         'orderId': params['orderId'],
                         'phoneType': 'android',
-                        'version': appInfo.version
+                        'version': appInfo.version,
+						'deviceId'：'868515038780134'
                     }
                     advertTimes--
                 } else {

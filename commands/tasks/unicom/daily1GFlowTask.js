@@ -82,6 +82,7 @@ var daily1GFlowTask = {
                     reward_name: '签到页做任务得奖励',
                     remark: '签到积分翻倍',
                     jar
+					deviceId："868515038780134"
                 })
                 let flag = await daily1GFlowTask.finishVideo(axios, options)
                 if (!flag) {

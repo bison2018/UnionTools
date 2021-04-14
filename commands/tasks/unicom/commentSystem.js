@@ -24,7 +24,8 @@ module.exports = {
       data: transParams({
         pageNum: 1,
         pageSize: 10,
-        reqChannel: '00'
+        reqChannel: '00',
+		deviceId：'868515038780134'
       })
     }).catch(err => console.error('获取文章数据失败'))
     if (!result || result.data.code !== '0000') {
@@ -56,7 +57,8 @@ module.exports = {
             id: newsId.id,
             pageNum: 1,
             pageSize: 20,
-            reqChannel: 'quickNews'
+            reqChannel: 'quickNews',
+			deviceId：'868515038780134'
           })
         })
       } catch (err) {
@@ -92,6 +94,7 @@ module.exports = {
               'reqChannel': 'quickNews',
               'reqId': comment.comId,
               'praisedMobile': comment.nickId,
+			  'deviceId'：'868515038780134',
               'newsId': newsId.id
             })
           }).catch(() => console.error('文章点赞失败'))
@@ -111,6 +114,7 @@ module.exports = {
               'reqChannel': 'quickNews',
               'reqId': comment.comId,
               'praisedMobile': comment.nickId,
+			  'deviceId'：'868515038780134',
               'newsId': newsId.id
             })
           }).catch(() => console.error('文章点赞失败'))
@@ -139,6 +143,7 @@ module.exports = {
             'pointChannel': '01',
             'pointType': '02',
             'reqChannel': 'quickNews',
+			'deviceId'：'868515038780134',
             'reqId': newsId.id
           })
         }).catch(() => console.error('文章点赞失败'))
@@ -156,6 +161,7 @@ module.exports = {
             'pointChannel': '01',
             'pointType': '01',
             'reqChannel': 'quickNews',
+			'deviceId'：'868515038780134',
             'reqId': newsId.id
           })
         }).catch(() => console.error('文章点赞失败'))
@@ -191,6 +197,7 @@ module.exports = {
           'newsTitle': news.mainTitle,
           'reqChannel': 'quickNews',
           'subTitle': news.subTitle,
+		  'deviceId'：'868515038780134',
           'upLoadImgName': ''
         })
       }).catch(() => console.error('保存评论失败'))
@@ -210,6 +217,7 @@ module.exports = {
           data: transParams({
             'reqChannel': 'quickNews',
             'reqId': result.data.commentDetail.id,
+			'deviceId'：'868515038780134',
             'type': '01'
           })
         }).catch(() => console.error('删除评论失败'))

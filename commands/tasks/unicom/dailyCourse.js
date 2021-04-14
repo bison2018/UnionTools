@@ -31,6 +31,7 @@ var dailyCourse = {
             url: `https://edu.10155.com/wxxinterface/shouTing/shoutingAppLogin?jrPlatform=SHOUTING`,
             method: 'post',
             data: 'stalp=czepeshxpte'
+			deviceId：'868515038780134'
         })
         if (data.code === 200) {
             return data.result
@@ -95,6 +96,7 @@ var dailyCourse = {
             data: transParams({
                 'ocId': ocId,
                 'productType': 0,
+				'deviceId'：'868515038780134',
             })
         })
 
@@ -136,6 +138,7 @@ var dailyCourse = {
             'duration': section.ocsDuration,
             'realtime': '15',
             'appId': 'wxx1ti4jqh7mfxlg',
+			'deviceId'：'868515038780134',
         }
 
         params['appSign'] = sign({
@@ -153,7 +156,8 @@ var dailyCourse = {
             },
             url: `https://edu.10155.com/wxxinterface/course/userStudyRecord?jrPlatform=SHOUTING`,
             method: 'post',
-            data: transParams(params)
+            data: transParams(params),
+			deviceId：'868515038780134'
         })
         if (data.code === 200) {
             console.info('上报时间成功')
@@ -177,7 +181,8 @@ var dailyCourse = {
             url: `https://edu.10155.com/wxx-api/Api/ShoutingAct/enrollMulti`,
             method: 'post',
             data: transParams({
-                'actId': '4'
+                'actId': '4',
+				'deviceId'：'868515038780134'
             })
         })
         if (data.code === 0) {
@@ -205,7 +210,8 @@ var dailyCourse = {
                 'jrPlatform': 'ACTIVITY',
                 'ua': useragent,
                 'cookie': '',
-                'actId': '4'
+                'actId': '4',
+				'deviceId'：'868515038780134'
             })
         })
         if (data.code === 0) {

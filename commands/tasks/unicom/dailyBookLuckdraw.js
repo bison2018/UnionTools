@@ -90,6 +90,7 @@ var dailyBookLuckdraw = {
                     'remark': '阅读每日读书福利广告1',
                     'remark1': '阅读每日读书福利广告1',
                     'version': appInfo.unicom_version,
+					"deviceId"："868515038780134",
                     'codeId': 945535424
                 }
 

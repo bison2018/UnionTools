@@ -21,6 +21,7 @@ let account = {
     accountUserName: "517050707",
     accountPassword: "a123456",
     accountToken: "4640b530b3f7481bb5821c6871854ce5",
+	deviceId："868515038780134",
 };
 var book5video = {
     query: async (request, options) => {
@@ -31,7 +32,8 @@ var book5video = {
             arguments4: new Date().getTime(), // time
             arguments6: "",
             netWay: "Wifi",
-            version: `android@8.0102`,
+            version: `android@8.0600`,
+			deviceId："868515038780134",
         };
         params["sign"] = sign([
             params.arguments1,
@@ -73,7 +75,8 @@ var book5video = {
                     .digest("hex"),
                 netWay: "Wifi",
                 remark: "章节视频得积分",
-                version: `android@8.0102`,
+                version: `android@8.0600`,
+				deviceId："868515038780134"
                 //orderId: "0923fca6d5ffb8ec017fc6b3cbc5c9c0",
             };
             params["sign"] = sign([
@@ -81,6 +84,7 @@ var book5video = {
                 params.arguments2,
                 params.arguments3,
                 params.arguments4,
+				deviceId：'868515038780134',
             ]);
             await require("./taskcallback").doTask(request, {
                 ...options,
