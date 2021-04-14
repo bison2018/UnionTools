@@ -431,6 +431,11 @@ var producGame = {
                         jar,
                         game
                     })
+					await producGame.playGame(axios, {
+						...options,
+						jar,
+						game
+					})
                 }
             })
         }
