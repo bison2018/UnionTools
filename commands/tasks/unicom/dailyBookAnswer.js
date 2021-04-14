@@ -64,8 +64,7 @@ var dailyBookAnswer = {
                 jrPlatform: "ACTIVITY",
                 shoutingversion: appInfo.unicom_version,
                 ticket: searchParams.ticket,
-                ua: useragent,
-				deviceId："868515038780134"
+                ua: useragent
             })
         })
         return {
@@ -91,8 +90,7 @@ var dailyBookAnswer = {
             data: transParams({
                 actId: '2',
                 chc: "VHFWJgE9DzhWOABjVS9QY1EgBDIEOlBkAioJMFBg",
-                jrPlatform: "ACTIVITY",
-				deviceId："868515038780134"
+                jrPlatform: "ACTIVITY"
             })
         })
         return data.data
@@ -115,8 +113,7 @@ var dailyBookAnswer = {
             data: transParams({
                 actId: '2',
                 chc: "VHFWJgE9DzhWOABjVS9QY1EgBDIEOlBkAioJMFBg",
-                jrPlatform: "ACTIVITY",
-				deviceId："868515038780134"
+                jrPlatform: "ACTIVITY"
             })
         })
         return data.data.today
@@ -141,8 +138,7 @@ var dailyBookAnswer = {
                 questionId: questionId,
                 answerId: answerId,
                 chc: "VHFWJgE9DzhWOABjVS9QY1EgBDIEOlBkAioJMFBg",
-                jrPlatform: "ACTIVITY",
-				deviceId："868515038780134"
+                jrPlatform: "ACTIVITY"
             })
         })
     },
@@ -171,8 +167,7 @@ var dailyBookAnswer = {
                 actId: actId,
                 answerId: answerId,
                 chc: "VHFWJgE9DzhWOABjVS9QY1EgBDIEOlBkAioJMFBg",
-                jrPlatform: "ACTIVITY",
-				deviceId："868515038780134"
+                jrPlatform: "ACTIVITY"
             })
         })
         if (data.data.sbl_reward_id) {

@@ -446,7 +446,7 @@ var producGame = {
             await producGame.gameFlowGet(axios, {
                 ...options,
                 gameId: game.id,
-                deviceType: gameDeviceTypes.get(game.id) && "Android"//这里本来是??导致无法运行改为&&
+                deviceType: gameDeviceTypes.get(game.id) && "Android"
             })
         }
     },

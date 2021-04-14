@@ -118,9 +118,8 @@ let dailyFingerqd = {
             netWay: "Wifi",
             remark1: "签到小游戏猜拳拿奖",
             remark: "签到页小游戏",
-            version: `android@8.0600`,
+            version: `android@8.0102`,
             codeId: 945757409,
-			'deviceId'：'868515038780134',
           };
           params["sign"] = AES.sign([
             params.arguments1,
@@ -147,7 +146,7 @@ let dailyFingerqd = {
             integral: integral,
             orderId: params["orderId"],
             phoneType: "android",
-            version: "8.0600",
+            version: "8.0102",
           };
           await sleep(30);
           advertTimes--;
@@ -248,8 +247,7 @@ let dailyFingerqd = {
       arguments4: new Date().getTime(),
       arguments6: "517050707",
       netWay: "Wifi",
-      version: `android@8.0600`,
-	  deviceId：'868515038780134'
+      version: `android@8.0102`,
     };
     params["sign"] = AES.sign([
       params.arguments1,
@@ -279,9 +277,8 @@ let dailyFingerqd = {
       orderId: generateOrderid(),
       netWay: "Wifi",
       remark: "签到小游戏猜拳拿奖",
-      version: `android@8.0600`,
+      version: `android@8.0100`,
       codeId: 945689604,
-	  deviceId：'868515038780134',
     };
     params["sign"] = AES.sign([
       params.arguments1,

@@ -6,8 +6,7 @@ var dailyBookVideo = {
       taskId: '5a6dd5106495402d9dcc5e801f3171b3',
       reward_name: '章节视频得积分',
       arguments7: 'woyuedu',
-      arguments8: 'a123456'，
-	  deviceId："868515038780134"
+      arguments8: 'a123456'
     })
   }
 }

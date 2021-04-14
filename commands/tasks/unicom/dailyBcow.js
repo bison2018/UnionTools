@@ -65,8 +65,7 @@ module.exports = bcow = {
           netWay: "Wifi",
           remark1: "签到翻牛牌活动",
           remark: "签到看视频翻倍得积分",
-          version: `android@8.0600`,
-		  deviceId："868515038780134",
+          version: `android@8.0102`,
           codeId: 945689604,
         };
         params["sign"] = AES.sign([
@@ -78,7 +77,6 @@ module.exports = bcow = {
           params.arguments7,
           params.arguments8,
           params.arguments9,
-		  deviceId："868515038780134",
         ]);
         params["orderId"] = crypto
           .createHash("md5")
@@ -109,8 +107,7 @@ module.exports = bcow = {
           type: "广告",
           orderId: orderId,
           phoneType: "android",
-          version: "8.0600",
-		  deviceId："868515038780134",
+          version: "8.0102",
         };
         advertTimes--;
         // eslint-disable-next-line no-unused-vars
@@ -177,8 +174,7 @@ module.exports = bcow = {
       netWay: "Wifi",
       remark1: "签到翻牛牌活动",
       remark: "签到看视频翻倍得积分",
-      version: `android@8.0600`,
-	  deviceId："868515038780134",
+      version: `android@8.0102`,
       codeId: 945689604,
     };
     params["sign"] = AES.sign([
@@ -186,7 +182,6 @@ module.exports = bcow = {
       params.arguments2,
       params.arguments3,
       params.arguments4,
-	  deviceId："868515038780134",
     ]);
     let { num, jar } = await require("./taskcallback").query(axios, {
       ...options,
@@ -213,16 +208,14 @@ module.exports = bcow = {
         .digest("hex"),
       netWay: "Wifi",
       remark: "签到小游戏翻牛牌",
-      version: `android@8.0600`,
+      version: `android@8.0100`,
       codeId: 945689604,
-	  deviceId："868515038780134",
     };
     params["sign"] = AES.sign([
       params.arguments1,
       params.arguments2,
       params.arguments3,
       params.arguments4,
-	  deviceId："868515038780134",
     ]);
     await require("./taskcallback").doTask(axios, {
       ...options,
