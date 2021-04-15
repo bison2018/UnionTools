@@ -124,7 +124,7 @@ var dailyFingerSign = {
             data: params
         })
         return {
-            resultId: data.data?.roundGame?.roundId
+            resultId: data.data.roundGame.roundId
         }
     },
     roundGameForPrize: async (axios, options) => {

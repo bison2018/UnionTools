@@ -144,7 +144,7 @@ var taskcallback = {
                 // "landing_type": 3,
                 // "is_sdk": true,
                 // "is_dsp_ad": false,
-                // "imei": "867442035025655",
+                 "imei": "867442035025655",
                 // "req_id": "e9da96b1-2d0c-49d0-b5b0-3fd6540d22d4u2997",
                 "rit": codeId
             },
@@ -180,23 +180,13 @@ var taskcallback = {
             method: 'POST',
             data: message
         })
-        data = res.data
-        // s = a(data.message.substr(1, 16))
-        // console.info(decryption(data.message.replace(/\n/g, '').substr(17), s))
-        if ('code' in data) {
-            throw new Error('获取激励信息出错')
-        }
-
-        return {
-            orderId
-        }
 
     },
     // 提交任务
     doTask: async (axios, options) => {
         let result = await taskcallback.reward(axios, options)
         let params = options.params
-        params['orderId'] = result['orderId']
+    //    params['orderId'] = result['orderId']
         delete params.codeId
         const useragent = `okhttp/4.4.0`
         let { data } = await axios.request({
