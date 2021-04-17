@@ -292,7 +292,7 @@ var dailyFingerSign = {
         } while (a <= 4)
 
         if (!noTry) {
-            throw new TryNextEvent('在下一轮尝试一次')
+            throw new TryNextEvent('在下一轮尝试一次！')
         }
     }
 }
