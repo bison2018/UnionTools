@@ -557,7 +557,7 @@ var producGame = {
             if (data.msg.indexOf('防刷策略接口校验不通过') !== -1) {
                console.error('获取奖励失败')
             }
-            console.reward('flow', data.data.flow + 'm')
+            console.reward('flow 100m')
         } else {
             console.error('获取奖励失败')
         }
