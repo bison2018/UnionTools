@@ -1,5 +1,5 @@
 //看书里面的5个视频
-//活动入口：主页-小说标签-任意一本小说内页章节中间
+//活动入口：主页-小说标签-任意一本小说内页章节中间 
 var crypto = require("crypto");
 var sign = (data) => {
     let str = "integralofficial&";
