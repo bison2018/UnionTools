@@ -557,7 +557,7 @@ var producGame = {
             if (data.msg.indexOf('防刷策略接口校验不通过') !== -1) {
                console.error('获取奖励失败')
             }
-            console.reward('flow 100m')
+            console.reward('flow 100m *')
         } else {
             console.error('获取奖励失败')
         }
@@ -645,29 +645,6 @@ var producGame = {
     },
     doTodayDailyTask: async (axios, options) => {
 
-        /* let { games: v_games } = await producGame.getTaskList(axios, options)
-        let video_task = v_games.find(d => d.task_type === 'video')
-
-        if (video_task.reachState === '0') {
-            let n = parseInt(video_task.task) - parseInt(video_task.progress)
-            console.info('领取视频任务奖励,剩余', n, '次')
-            let { jar } = await producGame.watch3TimesVideoQuery(axios, options)
-            let i = 1
-            while (i <= n) {
-                await producGame.watch3TimesVideo(axios, {
-                    ...options,
-                    jar
-                })
-                await new Promise((resolve, reject) => setTimeout(resolve, (Math.floor(Math.random() * 5) + 2) * 200))
-                await producGame.getTaskList(axios, options)
-                await producGame.queryIntegral(axios, {
-                    ...options,
-                    taskCenterId: video_task.id
-                })
-                ++i
-            }
-        } */
-
         let { games } = await producGame.getTaskList(axios, options)
         let today_task = games.find(d => d.task_type === 'todayTask')
         if (!today_task) {
@@ -681,7 +658,7 @@ var producGame = {
                 ...options,
                 taskCenterId: today_task.id
             })
-            console.reward('flow', '100m')
+            console.reward('flow', '100m *')
             console.info('领取完成今日任务流量+100m')
         } else if (today_task.reachState === '2') {
             console.info('每日日常任务已完成')
