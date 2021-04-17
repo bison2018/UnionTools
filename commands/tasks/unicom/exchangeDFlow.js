@@ -53,10 +53,7 @@ var exchangeDFlow = {
         }
         let selectedFlow = product.find(p => p.productId === productId)
         console.info('将兑换', selectedFlow.productName)
-		console.info('无法确认是否能百分百成功')
-		console.info('我自己的号码是没问题的')
-		console.info('但是我用我朋友的号码提示失败')
-		console.info('欢迎大家反馈下自己的情况和套餐')
+
 
         let { data } = await axios.request({
             headers: {
