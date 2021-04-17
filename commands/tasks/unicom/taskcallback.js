@@ -9,7 +9,7 @@ var transParams = (data) => {
     return params;
 };
 
-//data 是准备加密的字符串,key是你的密钥
+//data 是准备加密的字符串,key是你的密钥 
 
 function encryption(data, key) {
     var iv = "";
