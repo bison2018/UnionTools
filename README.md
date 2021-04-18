@@ -19,7 +19,7 @@ npm install
 等依赖包安装好了就行了
 然后运行下面的命令
 node index.js unicom --user 11111 --password 1111 --appid 1555555
-node index.js unicom --user 11111 --password 1111 --appid 1555555 --tasks dailygameflow 只运行游戏的(https://github.com/simo8102/88-AutoSignMachine/issues/167)
+node index.js unicom --user 11111 --password 1111 --appid 1555555 --tasks dailygameflow 只运行游戏(https://github.com/simo8102/88-AutoSignMachine/issues/167)
 ```
 如果多用户就
 启用`node index.js unicom --config default.json`表示配置文件
