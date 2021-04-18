@@ -32,6 +32,17 @@ var dailyBookRead = {
         phonenum
       })
     })
+        let { config: st_config } = await axios.request({
+      headers: {
+        "user-agent": useragent,
+        "X-Requested-With": "XMLHttpRequest"
+      },
+      url: `http://st.woread.com.cn/touchextenernal/common/shouTingLogin.action`,
+      method: 'POST',
+      data: transParams({
+        phonenum
+      })
+    })
     let st_jar = st_config.jar
     let cookiesJson = st_jar.toJSON()
     let diwert = cookiesJson.cookies.find(i => i.key == 'diwert')
@@ -53,6 +64,14 @@ var dailyBookRead = {
     }
 
     await require('./rewardVideo').doTask(request, {
+      ...options,
+      acid: 'AC20200521222721',
+      taskId: 'c32ef7f06d8e4b5fa3818a5504da2109',
+      codeId: 945569148,
+      reward_name: '阅读会员日看视频得积分'
+    })
+  },
+      await require('./rewardVideo').doTask(request, {
       ...options,
       acid: 'AC20200521222721',
       taskId: 'c32ef7f06d8e4b5fa3818a5504da2109',
