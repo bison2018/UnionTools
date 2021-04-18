@@ -2,7 +2,7 @@
 取消自动换1G流量
 
 
-建议使用本地方式运行
+建议使用本地方式运行（手机）
 ```
 	首先下载安装好termux
 	打开termux
@@ -46,6 +46,39 @@
     "password-3": "72******1",
     "appid-2": "92******1"
 }
+```
+本地运行电脑端（win）
+```
+1、下载安装node 一路下一步就行
+https://nodejs.org/dist/v15.14.0/node-v15.14.0-x64.msi
+##2、安装git（此步可省略 )
+https://github.com/git-for-windows/git/releases/download/v2.31.1.windows.1/Git-2.31.1-64-bit.exe
+3、随便找个文件夹
+下载本项目代码解压文件夹
+进入你刚解压出来的文件里
+输入 下面的代码
+npm install
+node index.js unicom --user 176*********** --password 13 --appid 0******************
+4、写个bat 代码如下
+node index.js unicom --user 176*********** --password 13 --appid 0******************
+多用户就在最后面在加一行node index.js unicom --user 176*********** --password 13 --appid 0******************有多少账号就添加多少（傻瓜式）
+你也可以根据这个https://github.com/simo8102/88-AutoSignMachine/blob/main/README.zh_CN.md   README的提示更改
+```
+本地运行电脑端（Linux）
+```
+1、安装node
+https://nodejs.org/zh-cn/download/package-manager/   根据官方文档的步骤安装node
+##2、安装git（此步可省略 )
+yum install git 或 apt-get install git 
+3、同步代码到本地
+git clone https://github.com/simo8102/88-AutoSignMachine.git
+输入 下面的代码
+npm install
+node index.js unicom --user 176*********** --password 13 --appid 0******************
+4、写个sh脚本 代码如下
+node index.js unicom --user 176*********** --password 13 --appid 0******************
+多用户就在最后面在加一行node index.js unicom --user 176*********** --password 13 --appid 0******************有多少账号就添加多少（傻瓜式）
+你也可以根据这个https://github.com/simo8102/88-AutoSignMachine/blob/main/README.zh_CN.md   README的提示更改
 ```
 2021-04-16 添加自动兑换1G流量，并不是都能兑换成功
 
