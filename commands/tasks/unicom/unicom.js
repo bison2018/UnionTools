@@ -243,9 +243,9 @@ var start = async (params) => {
   }, taskOption)
 
   // 积分商城-疯踩小橙（沃耀联通小游戏）
-  await scheduler.regTask('woyaoliantong', async (request) => {
-    await require('./woyaoliantong').doTask(request, options)
-  }, taskOption)
+//  await scheduler.regTask('woyaoliantong', async (request) => {
+//    await require('./woyaoliantong').doTask(request, options)
+//  }, taskOption)
 
 
 
