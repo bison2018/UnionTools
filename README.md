@@ -109,8 +109,9 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 添加如下secret:
 | Name | Value | 
 | :---:| :---: |
-| ENABLE_UNICOM | true |
 | UNICOM_PASSWORD | 服务密码 |
 | UNICOM_USER | 手机号 |
+| UNICOM_PASSWORD2 | 服务密码2 |
+| UNICOM_USER2 | 手机号2 |
 | UNICOM_APPID | http://m.client.10010.com/mobileService/customer/getclientconfig.htm?appId= 开抓包 你再打开手厅就能找到了 |
 | NOTIFY_SCKEY | [service酱的key](http://sc.ftqq.com/?c=code) |
