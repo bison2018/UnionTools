@@ -75,6 +75,7 @@ yum install git 或 apt-get install git
 3、同步代码到本地
 git clone https://github.com/simo8102/88-AutoSignMachine.git
 输入 下面的代码
+cd 88-AutoSignMachine
 npm install
 node index.js unicom --user 176*********** --password 13 --appid 0******************
 4、写个sh脚本 代码如下
