@@ -1,7 +1,5 @@
 # 建议本地运行！！！
 
-2021-04-18  添加了sync_fork脚本
-
 本地手机方式运行（安卓）
 ```
 	首先下载安装好termux
@@ -84,6 +82,8 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 多用户就在最后面在加一行node index.js unicom --user 176*********** --password 13 --appid 0******************有多少账号就添加多少（傻瓜式）
 你也可以根据这个https://github.com/simo8102/88-AutoSignMachine/blob/main/README.zh_CN.md   README的提示更改
 ```
+2021-04-18  添加了sync_fork脚本
+
 2021-04-16 添加自动兑换1G流量，并不是都能兑换成功（已移除）
 
 欢迎大家提交下自己得兑换情况和套餐
