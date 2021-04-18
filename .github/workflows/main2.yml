@@ -81,4 +81,3 @@ jobs:
         appid: ${{secrets.unicom_appid}}
         notify_sctkey: ${{secrets.NOTIFY_SCKEY}}
       run: node index.js unicom --user=${user2} --password=${password2} --appid=${appid} 
-© 2021 GitHub, Inc.
