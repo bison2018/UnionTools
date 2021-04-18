@@ -1,0 +1,19 @@
+name: Sync Fork
+
+on:
+  workflow_dispatch: # on button click
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: NimaQu/fork-sync@v1.3.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          owner: simo8102
+          base: master
+          head: master
+          token_merge: true
+          personal_token: ${{ secrets.PERSONAL_TOKEN }}
