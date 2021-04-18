@@ -2,35 +2,24 @@
 
 本地手机方式运行（安卓）
 ```
-	首先下载安装好termux
-	打开termux
-	然后运行下面的命令(所有命令都是在英文输入状态下输入)
-
-	apt update
-
-	apt install git vim perl nodejs-lts wget curl nano cronie moreutils
-
-	git clone https://github.com/simo8102/88-AutoSignMachine.git
-
-
-	看下文件名字
-	记住那个88-AutoSignMachine
-
-	然后
-
-	mv   88-AutoSignMachine qd
-
-	进入这个文件夹里面
-
-	cd qd
-
-	npm install
-
-	等依赖包安装好了就行了
-	然后运行下面的命令
-
-	node index.js unicom --user 11111 --password 1111 --appid 1555555
-	
+首先下载安装好termux
+打开termux
+然后运行下面的命令(所有命令都是在英文输入状态下输入)
+apt update
+apt install git vim perl nodejs-lts wget curl nano cronie moreutils
+git clone https://github.com/simo8102/88-AutoSignMachine.git
+看下文件名字
+ls
+记住那个88-AutoSignMachine
+然后
+mv   88-AutoSignMachine qd
+进入这个文件夹里面
+cd qd
+npm install
+等依赖包安装好了就行了
+然后运行下面的命令
+node index.js unicom --user 11111 --password 1111 --appid 1555555
+node index.js unicom --user 11111 --password 1111 --appid 1555555 --tasks dailygameflow 只运行游戏的(https://github.com/simo8102/88-AutoSignMachine/issues/167)
 ```
 如果多用户就
 启用`node index.js unicom --config default.json`表示配置文件
