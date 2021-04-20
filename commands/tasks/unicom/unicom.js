@@ -52,59 +52,6 @@ var start = async (params) => {
 
 
 
-
-  // 首页-签到有礼-免费领-领免费霸王餐
-  await scheduler.regTask('dailyScratchCard', async (request) => {
-    await require('./dailyScratchCard').doTask(request, options)
-  }, taskOption)
-
-  // 首页-签到有礼-免费抽-赢vivo x60
-  await scheduler.regTask('dailyNcow', async (request) => {
-    await require('./dailyNcow').doTask(request, options)
-  }, taskOption)
-
-
-
-  // 首页-签到有礼-免费抽-抓OPPO手机
-  await scheduler.regTask('dailyGrabdollPage', async (request) => {
-    await require('./dailyGrabdollPage').doTask(request, options)
-  }, taskOption)
-
-  // 首页-签到有礼-免费抽-拿666积分-豪礼大派送抽奖
-  await scheduler.regTask('jflottery', async (request) => {
-    await require('./jflottery').timesDraw(request, options)
-  }, taskOption)
-
-
-
-  // 首页-签到有礼-免费抽-华为mate40pro(刮刮乐)
-  await scheduler.regTask('dailyVideoScratchcard', async (request) => {
-    await require('./dailyVideoScratchcard').doTask(request, options)
-  }, taskOption)
-
-
-
-  // 首页-签到有礼-免费抽-拆华为Pad(去抽奖)
-  await scheduler.regTask('dailyLKMH', async (request) => {
-    await require('./dailyLKMH').doTask(request, options)
-  }, taskOption)
-
-  // 首页-签到有礼-免费抽-拿iPhone12(摇一摇)
-  await scheduler.regTask('dailyYYQ', async (request) => {
-    await require('./dailyYYQ').doTask(request, options)
-  }, taskOption)
-
-
-  // 首页-签到有礼-赚更多福利-看视频奖励5积分
-  await scheduler.regTask('dailyVideo', async (request) => {
-    await require('./dailyVideo').doTask(request, options)
-  }, taskOption)
-
-  // 首页-签到有礼-赚更多福利-天天抽好礼
-  await scheduler.regTask('dailylottery', async (request) => {
-    await require('./dailylottery').doTask(request, options)
-  }, taskOption)
-
   // 首页-游戏-娱乐中心-每日打卡
   await scheduler.regTask('producGameSignin', async (request) => {
     await require('./producGame').gameBox(request, options)
@@ -149,10 +96,6 @@ var start = async (params) => {
   })
 
 
-  // 首页-签到有礼-免费拿-猜拳拿奖
-  await scheduler.regTask('dailyFingerSign', async (request) => {
-    await require('./dailyFingerSign').doTask(request, options)
-  }, taskOption)
 
   // 首页-积分商城-火热抢购-三只松鼠-看视频得积分
   await scheduler.regTask('dailyShopVideoIntegral', async (request) => {
@@ -169,11 +112,6 @@ var start = async (params) => {
     await require('./dailyOtherRewardVideo').doWisdomActivityIntegralTask(request, options)
   }, taskOption)
 
-  // 首页-签到有礼-免费领-饿了么红包
-  await scheduler.regTask('dailyUnicomTask', async (request) => {
-    await require('./dailyUnicomTask').doIntegralAd(request, options)
-    await require('./dailyUnicomTask').doTurnCard(request, options)
-  }, taskOption)
 
 
   // 冬奥-冰雪俱乐部-联通客户日-幸运九宫格
