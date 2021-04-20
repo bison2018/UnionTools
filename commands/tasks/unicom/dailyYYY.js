@@ -78,35 +78,6 @@ var dailyYYY = {
 
     return result.data
   },
-  doVideoReward: async (axios, options) => {
-    const { plat } = options
-    let params = {
-      'arguments1': 'AC20200611152252',
-      'arguments2': '',
-      'arguments3': '',
-      'arguments4': new Date().getTime(),
-      'arguments6': '',
-      'arguments7': '',
-      'arguments8': '',
-      'arguments9': '',
-      'netWay': 'Wifi',
-      'remark1': '签到小游戏摇摇乐不倒翁',
-      'remark': '签到小游戏翻倍得积分',
-      'version': appInfo.unicom_version,
-      'codeId': 945689604
-    }
-    params['sign'] = signRewardVideoParams([params.arguments1, params.arguments2, params.arguments3, params.arguments4])
-    params['orderId'] = crypto.createHash('md5').update(new Date().getTime() + '').digest('hex')
-
-    result = await require('./taskcallback').reward(axios, {
-      ...options,
-      params,
-      jar: plat.jar
-    })
-    return {
-      params
-    }
-  },
   minusGameTimes: async (axios, options) => {
     const { Authorization, params } = options
     const useragent = buildUnicomUserAgent(options, 'p')
