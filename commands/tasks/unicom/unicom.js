@@ -53,11 +53,6 @@ var start = async (params) => {
 
 
 
-  // 首页-签到有礼-免费领-浏览领积分
-  await scheduler.regTask('dailyLiuLan', async (request) => {
-    await require('./dailyTTliulan').doTask(request, options)
-  }, taskOption)
-
   // 首页-签到有礼-免费领-领免费霸王餐
   await scheduler.regTask('dailyScratchCard', async (request) => {
     await require('./dailyScratchCard').doTask(request, options)
