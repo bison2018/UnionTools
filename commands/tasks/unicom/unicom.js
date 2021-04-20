@@ -50,21 +50,7 @@ var start = async (params) => {
     await require('./woTree').doTask(request, options)
   }, taskOption)
 
-  await scheduler.regTask('dailyBookRead', async (request) => {
-    // 首页-小说-阅读越有礼打卡赢话费
-    await require('./dailyBookRead').doTask(request, options)
-    await require('./dailyVideoBook').doTask(request, options)
-  }, taskOption)
 
-
-
-  // 首页-小说-章节详情-看视频领积分
-  await scheduler.regTask('dailyBookVideo', async (request) => {
-    // 首页-小说-读满10章赢好礼-看视频领2积分
-    await require('./dailyVideoBook').dovideoIntegralTask(request, options)
-    // 首页-小说-章节详情-看视频领积分
-    await require('./dailyBookVideo').doTask(request, options)
-  }, taskOption)
 
 
   // 首页-签到有礼-免费领-浏览领积分
