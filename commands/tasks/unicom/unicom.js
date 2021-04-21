@@ -108,11 +108,9 @@ var start = async (params) => {
   }, taskOption)
 
   // 服务-查询-电子发票-赚积分
-  await scheduler.regTask('dailyWisdomActivityIntegral', async (request) => {
-    await require('./dailyOtherRewardVideo').doWisdomActivityIntegralTask(request, options)
-  }, taskOption)
-
-
+//await scheduler.regTask('dailyWisdomActivityIntegral', async (request) => {
+//    await require('./dailyOtherRewardVideo').doWisdomActivityIntegralTask(request, options)
+//  }, taskOption)
 
   // 冬奥-冰雪俱乐部-联通客户日-幸运九宫格
   await scheduler.regTask('dailyClubLottery', async (request) => {
