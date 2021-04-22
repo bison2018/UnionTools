@@ -15,8 +15,8 @@ function generateMixed(n) {
 
 
 var appInfo = {
-    version: 8.6000,
-    unicom_version: 'android@8.6000',
+    version: 8.0600,
+    unicom_version: 'iphone_c@8.0600',
     app_name: '中国联通',
     package_name: 'com.sinovatech.unicom.ui'
 }
@@ -35,7 +35,7 @@ var devices = [{
 }]
 var device = devices[Math.floor(Math.random() * devices.length)]
 var userAgentTpl = {
-    'p': 'Mozilla/5.0 (Linux; Android {android_version}; {deviceModel} Build/{buildSn}; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/75.0.3770.143 Mobile Safari/537.36; unicom{version:{unicom_version},desmobile:{desmobile}};devicetype{deviceBrand:{deviceBrand},deviceModel:{deviceModel}};{yw_code:}'
+    'p': 'Mozilla/5.0 (iPad; CPU OS 14_0_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 unicom{version:iphone_c@8.0600}{systemVersion:dis}{yw_code:}'
 }
 
 let file = path.join(process.env.asm_save_data_dir, `taskFile_${process.env.taskKey}.json`)
