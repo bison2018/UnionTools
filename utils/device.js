@@ -21,15 +21,15 @@ var appInfo = {
     package_name: 'com.sinovatech.unicom.ui'
 }
 var devices = [{
-    android_version: '9',
-    deviceBrand: 'samsung',
-    deviceModel: 'SM-G977N',
+    deviceOS: '14.0.1',
+    deviceBrand: 'iphone',
+    deviceModel: 'iPad',
     buildSn: 'LMY48Z',
     deviceId: generateMixed(15) + ''
 }, {
-    android_version: '9',
-    deviceBrand: 'huawei',
-    deviceModel: 'VKY-AL00',
+    deviceOS: '14.0.1',
+    deviceBrand: 'iphone',
+    deviceModel: 'iPad',
     buildSn: 'V417IR',
     deviceId: generateMixed(15) + ''
 }]
