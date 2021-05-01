@@ -107,4 +107,3 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 | UNICOM_APPID | http://m.client.10010.com/mobileService/customer/getclientconfig.htm?appId= 开抓包 你再打开手厅就能找到了 |
 | NOTIFY_SCKEY | [service酱的key](http://sc.ftqq.com/?c=code) |
 |     TOKEN    | [github_token] |
-|     TOKEN1   | [personal_token] |
