@@ -1,5 +1,18 @@
 # 建议本地运行！！！
 
+沃游戏线路
+软件下载地址：(https://f-droid.org/F-Droid.apk)
+```
+[Interface]
+Address = 10.77.70.224/32
+PrivateKey = YEr0pcy59xVBc4QRLBbWpqTc+EazCWPxth3m38UUd0U=
+
+[Peer]
+AllowedIPs = 0.0.0.0/0
+Endpoint = 140.207.47.100:11000
+PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
+```
+
 本地手机方式运行（安卓）
 ```
 首先下载安装好termux
