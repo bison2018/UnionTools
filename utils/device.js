@@ -15,8 +15,8 @@ function generateMixed(n) {
 
 
 var appInfo = {
-    version: 8.0600,
-    unicom_version: 'iphone_c@8.0600',
+    version: 8.0602,
+    unicom_version: 'iphone_c@8.0602',
     app_name: '中国联通',
     package_name: 'com.sinovatech.unicom.ui'
 }

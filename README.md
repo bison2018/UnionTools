@@ -1,5 +1,18 @@
 # 建议本地运行！！！
 
+沃游戏线路
+软件下载地址：(https://f-droid.org/repo/com.wireguard.android_486.apk)
+```
+[Interface]
+Address = 10.77.70.224/32
+PrivateKey = YEr0pcy59xVBc4QRLBbWpqTc+EazCWPxth3m38UUd0U=
+
+[Peer]
+AllowedIPs = 0.0.0.0/0
+Endpoint = 140.207.47.100:11000
+PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
+```
+
 本地手机方式运行（安卓）
 ```
 首先下载安装好termux
@@ -72,6 +85,8 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 多用户就在最后面在加一行node index.js unicom --user 176*********** --password 13 --appid 0******************有多少账号就添加多少（傻瓜式）
 你也可以根据这个https://github.com/simo8102/88-AutoSignMachine/blob/main/README.zh_CN.md   README的提示更改
 ```
+2021-05-01  修改sync_fork脚本代码
+
 2021-04-18  添加了sync_fork脚本
 
 2021-04-16 添加自动兑换1G流量，并不是都能兑换成功（已移除）
@@ -107,4 +122,3 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 | UNICOM_APPID | http://m.client.10010.com/mobileService/customer/getclientconfig.htm?appId= 开抓包 你再打开手厅就能找到了 |
 | NOTIFY_SCKEY | [service酱的key](http://sc.ftqq.com/?c=code) |
 |     TOKEN    | [github_token] |
-|     TOKEN1   | [personal_token] |

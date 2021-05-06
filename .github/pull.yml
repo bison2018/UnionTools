@@ -1,0 +1,6 @@
+version: "1"
+rules: 
+    - base: main
+      upstream: simo8102:main 
+      mergeMethod: hardreset 
+      mergeUnstable: true 

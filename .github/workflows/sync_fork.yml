@@ -1,19 +1,28 @@
-name: Sync Fork
+# 自动同步上游仓库
+
+name: repo-sync
 
 on:
-  workflow_dispatch: # on button click
+  workflow_dispatch:
+  schedule:
+    - cron: '0 1 * * 1,3,5'
+    # UTC时区，比我们东八区早8小时，上面示例为：每周一、三、五的9点。
 
 jobs:
-  sync:
+  repo-sync:
+    if: ${{ github.repository != 'simo8102/88-AutoSignMachine' }}
 
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: NimaQu/fork-sync@v1.3.1
+    steps:  
+      - uses: actions/checkout@v2
         with:
+          persist-credentials: false
+
+      - name: repo-sync
+        uses: repo-sync/github-sync@v2
+        with:
+          source_repo: "https://github.com/simo8102/88-AutoSignMachine.git"
+          source_branch: "main"
+          destination_branch: "main"
+          sync_tags: "true"
           github_token: ${{ secrets.TOKEN }}
-          owner: simo8102
-          base: master
-          head: master
-          token_merge: true
-          personal_token: ${{ secrets.TOKEN1 }}

@@ -1,0 +1,14 @@
+# 自动关闭不规范PR
+
+name: Autocloser
+on: pull_request_target
+jobs:
+  autoclose:
+    runs-on: ubuntu-latest
+    if: github.repository == 'simo8102/88-AutoSignMachine'
+    steps:
+    - uses: roots/issue-closer@v1.1
+      with:
+        repo-token: ${{ secrets.TOKEN }}
+        pr-close-message: "该PR由于未遵循PR模板而被自动关闭。"
+        pr-pattern: ".*请问您是否明白：【yes】 -->.*"
