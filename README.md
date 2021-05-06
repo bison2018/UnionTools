@@ -25,6 +25,7 @@ AllowedIPs = 0.0.0.0/0
 Endpoint = 140.207.47.100:11000
 PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
 ```
+导入配置后记得在编辑下线路的生效app不然不免
 
 本地手机方式运行（安卓）
 ```
