@@ -4,7 +4,20 @@
 软件下载地址：(https://f-droid.org/repo/com.wireguard.android_486.apk)  或者下载项目里得apk文件
 ```
 [Interface]
+Address = 10.77.70.9/32
+DNS = 223.5.5.5
+PrivateKey = WO3IfoFcLHDYoh+1J29gyoyGGsDRsJVBggC3/6UdSU4=
+
+[Peer]
+AllowedIPs = 0.0.0.0/0
+Endpoint = 140.207.47.100:11000
+PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
+```
+
+```
+[Interface]
 Address = 10.77.70.224/32
+DNS = 223.5.5.5
 PrivateKey = YEr0pcy59xVBc4QRLBbWpqTc+EazCWPxth3m38UUd0U=
 
 [Peer]
