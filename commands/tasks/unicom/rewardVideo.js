@@ -33,7 +33,7 @@ var rewardVideo = {
             'remark1': reward_name,
             'remark': remark || reward_name,
             'version': appInfo.unicom_version,
-            'codeId': codeId
+            'codeId': codeId,
 			'version':"iphone_c@8.0603"
 			}
     },
