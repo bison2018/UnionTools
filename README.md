@@ -1,7 +1,7 @@
 # 建议本地运行！！！
 
 沃游戏线路
-软件下载地址：(https://f-droid.org/F-Droid.apk)
+软件下载地址：(https://f-droid.org/repo/com.wireguard.android_486.apk)
 ```
 [Interface]
 Address = 10.77.70.224/32
