@@ -20,21 +20,22 @@ var rewardVideo = {
             orderId
         } = options
         return {
-            'arguments1': acid, // acid
-            'arguments2': arguments2 !== undefined ? arguments2 : account.yhChannel, // yhChannel
+            'arguments1': "AC20200814162815", // acid
+            'arguments2': "GGPD", // yhChannel
             'arguments3': taskId, // yhTaskId menuId
             'arguments4': new Date().getTime(), // time
-            'arguments6': arguments6 !== undefined ? arguments6 : account.accountChannel,
-            'arguments7': arguments7 !== undefined ? arguments7 : account.accountUserName,
-            'arguments8': arguments8 !== undefined ? arguments8 : account.accountPassword,
-            'arguments9': arguments9 !== undefined ? arguments9 : account.accountToken,
+            'arguments6': "517050707",
+            'arguments7': "517050707",
+            'arguments8': "123456",
+            'arguments9': "4640b530b3f7481bb5821c6871854ce5",
             'orderId': orderId !== undefined ? orderId : crypto.createHash('md5').update(new Date().getTime() + '').digest('hex'),
             'netWay': 'Wifi',
             'remark1': reward_name,
             'remark': remark || reward_name,
             'version': appInfo.unicom_version,
             'codeId': codeId
-        }
+			'version':"iphone_c@8.0603"
+			}
     },
     /**
      * 查询任务
