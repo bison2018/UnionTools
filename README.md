@@ -1,5 +1,8 @@
 # 建议本地运行！！！
 
+2021-05-08 添加阅读领1G流量（未测试）
+
+
 沃游戏线路
 软件下载地址：(https://f-droid.org/repo/com.wireguard.android_486.apk)  或者下载项目里得apk文件
 ```
@@ -13,6 +16,7 @@ AllowedIPs = 0.0.0.0/0
 Endpoint = 140.207.47.100:11000
 PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
 ```
+
 
 ```
 [Interface]
