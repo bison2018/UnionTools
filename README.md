@@ -8,7 +8,7 @@
 
 沃游戏线路
 
-[软件下载](https://f-droid.org/repo/com.wireguard.android_486.apk)  或者下载项目里得apk文件
+[软件下载](https://f-droid.org/repo/com.wireguard.android_486.apk)  或者[下载项目里得apk文件](https://github.com/simo8102/88-AutoSignMachine/blob/main/WireGuard.apk?raw=true)
 ```
 [Interface]
 Address = 10.77.70.9/32
