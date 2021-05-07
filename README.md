@@ -1,9 +1,12 @@
 # 建议本地运行！！！
 
 2021-05-08 添加阅读领1G流量（未测试）
+添加一个免流软件乌拉网游加速器（http://t.cn/A6tN2mr0）
 
+2121-05-07添加沃游戏线路具体如下：
 
 沃游戏线路
+
 软件下载地址：(https://f-droid.org/repo/com.wireguard.android_486.apk)  或者下载项目里得apk文件
 ```
 [Interface]
