@@ -50,7 +50,14 @@ var start = async (params) => {
     await require('./woTree').doTask(request, options)
   }, taskOption)
 
-
+  //阅读领1G流量
+  await scheduler.regTask('dailyBookRead1GFlow', async (request) => {
+      await require("./dailyVideoBook").read1GFlow(request, options)
+	   await require("./dailyVideoBook").dovideoIntegralTask(request, options)
+	   await require("./dailyVideoBook").readluchdraw(request, options)
+	   await require("./dailyVideoBook").readSignUp(request, options)
+	   await require("./dailyVideoBook").read10flow(request, options)
+    }, taskOption )
 
   // 首页-游戏-娱乐中心-每日打卡
   await scheduler.regTask('producGameSignin', async (request) => {
