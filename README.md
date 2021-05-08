@@ -7,7 +7,15 @@
 沃游戏节点(peer)的公钥变了
 
 ```
-rYONiQwIGtRyjtNPiJmXlfzruh/fmg2IxZmyVGiSPQ4=
+[Interface]
+Address = 10.26.2.126/32
+DNS = 223.5.5.5
+PrivateKey = qM0cAdZbzQQCECyAlsbz5N4nDjHMaupmF+KJSrJRh0A=
+
+[Peer]
+AllowedIPs = 0.0.0.0/0
+Endpoint = 140.207.47.100:11000
+PublicKey = rYONiQwIGtRyjtNPiJmXlfzruh/fmg2IxZmyVGiSPQ4=
 ```
 
 2121-05-07添加沃游戏线路具体如下：
