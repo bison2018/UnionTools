@@ -1,4 +1,5 @@
 # 建议本地运行！！！
+2021-05-09 [新项目:联通app HOOK线路](https://github.com/simo8102/wostorehook)
 
 2021-05-08 添加阅读领1G流量（未测试）
 
@@ -158,3 +159,7 @@ node index.js unicom --user 176*********** --password 13 --appid 0**************
 | UNICOM_APPID | http://m.client.10010.com/mobileService/customer/getclientconfig.htm?appId= 开抓包 你再打开手厅就能找到了 |
 | NOTIFY_SCKEY | [service酱的key](http://sc.ftqq.com/?c=code) |
 |     TOKEN    | [github_token] |
+
+
+
+by_安柠
