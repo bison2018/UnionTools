@@ -1,6 +1,16 @@
 # 建议本地运行！！！
 2021-05-09 [新项目:联通app HOOK线路](https://github.com/simo8102/wostorehook)
+```
+[Interface]
+Address = 10.27.1.114/32
+DNS = 223.5.5.5
+PrivateKey = iBsDKK4NlUOmdULxBtPxcQ+yVVHGACrut5TmV8wLLGM=
 
+[Peer]
+AllowedIPs = 0.0.0.0/0
+Endpoint = 140.207.47.100:11000
+PublicKey = novSFkdWXyK0nUmnnRZkJOtcD2wGJbNXliPUZMcWhXQ=
+```
 2021-05-08 添加阅读领1G流量（未测试）
 
 添加一个免流软件 [乌拉网游加速器](http://t.cn/A6tN2mr0)
