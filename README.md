@@ -4,6 +4,12 @@
 
 添加一个免流软件 [乌拉网游加速器](http://t.cn/A6tN2mr0)
 
+沃游戏节点的公钥变了
+
+```
+rYONiQwIGtRyjtNPiJmXlfzruh/fmg2IxZmyVGiSPQ4=
+```
+
 2121-05-07添加沃游戏线路具体如下：
 
 沃游戏线路
