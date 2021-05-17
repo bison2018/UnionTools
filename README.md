@@ -1,5 +1,7 @@
 # 建议本地运行！！！
 
+2021-05-17 本项目不在维护，接下来的看你们自己的了
+
 2021-05-10 [沃游戏线路更新地址](https://github.com/simo8102/chinaunicom-AutoSignMachine/blob/main/%E7%BA%BF%E8%B7%AF%E6%9B%B4%E6%96%B0.md)
 
 2021-05-09 [新项目:联通app HOOK线路](https://github.com/simo8102/wostorehook)
