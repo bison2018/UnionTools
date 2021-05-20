@@ -1,38 +1,18 @@
 # 建议本地运行！！！
 
+2021-05-21 添加一个更新线路的脚本 不用每次去导入线路了（需要root和自己编辑生效app 有能力的可以自行修改）
+
 2021-05-17 本项目不在维护，接下来的看你们自己的了
 
 2021-05-10 [沃游戏线路更新地址](https://github.com/simo8102/chinaunicom-AutoSignMachine/blob/main/%E7%BA%BF%E8%B7%AF%E6%9B%B4%E6%96%B0.md)
 
 2021-05-09 [新项目:联通app HOOK线路](https://github.com/simo8102/wostorehook)
-```
-[Interface]
-Address = 10.27.1.114/32
-DNS = 223.5.5.5
-PrivateKey = iBsDKK4NlUOmdULxBtPxcQ+yVVHGACrut5TmV8wLLGM=
 
-[Peer]
-AllowedIPs = 0.0.0.0/0
-Endpoint = 140.207.47.100:11000
-PublicKey = novSFkdWXyK0nUmnnRZkJOtcD2wGJbNXliPUZMcWhXQ=
-```
 2021-05-08 添加阅读领1G流量（未测试）
 
 添加一个免流软件 [乌拉网游加速器](http://t.cn/A6tN2mr0)
 
-沃游戏节点(peer)的公钥变了
 
-```
-[Interface]
-Address = 10.26.2.126/32
-DNS = 223.5.5.5
-PrivateKey = qM0cAdZbzQQCECyAlsbz5N4nDjHMaupmF+KJSrJRh0A=
-
-[Peer]
-AllowedIPs = 0.0.0.0/0
-Endpoint = 140.207.47.100:11000
-PublicKey = rYONiQwIGtRyjtNPiJmXlfzruh/fmg2IxZmyVGiSPQ4=
-```
 
 2121-05-07添加沃游戏线路具体如下：
 
@@ -51,18 +31,6 @@ Endpoint = 140.207.47.100:11000
 PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
 ```
 
-
-```
-[Interface]
-Address = 10.77.70.224/32
-DNS = 223.5.5.5
-PrivateKey = YEr0pcy59xVBc4QRLBbWpqTc+EazCWPxth3m38UUd0U=
-
-[Peer]
-AllowedIPs = 0.0.0.0/0
-Endpoint = 140.207.47.100:11000
-PublicKey = G174V7rB8BcEptUPdThi+z8ooGGgYTRHmayTccLTFFI=
-```
 导入配置后记得在编辑下线路的生效app不然不免
 
 本地手机方式运行（安卓）
