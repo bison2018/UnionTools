@@ -1,5 +1,7 @@
 # 建议本地运行！！！
 
+2021-05-25 用源码编译了一个能自动更新沃线路的wg版本请到[releases](https://github.com/simo8102/chinaunicom-AutoSignMachine/releases)下载
+
 2021-05-21 添加一个[更新线路的脚本](https://raw.githubusercontent.com/simo8102/chinaunicom-AutoSignMachine/main/%E6%B2%83%E6%B8%B8%E6%88%8F%E7%BA%BF%E8%B7%AF%E6%9B%B4%E6%96%B0%E8%84%9A%E6%9C%AC.sh) 不用每次去导入线路了（需要root和wget[如缺失wget功能请到面具内安装busybox模块即可]还有执行脚本后自己去app内编辑生效app 有能力的可以自行修改）
 
 2021-05-17 本项目不在维护，接下来的看你们自己的了
@@ -18,7 +20,7 @@
 
 沃游戏线路
 
-[软件下载](https://f-droid.org/repo/com.wireguard.android_486.apk)  或者[下载项目里得apk文件](https://github.com/simo8102/88-AutoSignMachine/blob/main/WireGuard.apk?raw=true)
+[软件下载](https://f-droid.org/repo/com.wireguard.android_486.apk) 
 ```
 [Interface]
 Address = 10.77.70.9/32
