@@ -1,20 +1,10 @@
 # 建议本地运行！！！
 
-2021-05-25 用源码编译了一个能自动更新沃线路的wg版本请到[releases](https://github.com/simo8102/chinaunicom-AutoSignMachine/releases)下载
-
-2021-05-21 添加一个[更新线路的脚本](https://raw.githubusercontent.com/simo8102/chinaunicom-AutoSignMachine/main/%E6%B2%83%E6%B8%B8%E6%88%8F%E7%BA%BF%E8%B7%AF%E6%9B%B4%E6%96%B0%E8%84%9A%E6%9C%AC.sh) 不用每次去导入线路了（需要root和wget[如缺失wget功能请到面具内安装busybox模块即可]还有执行脚本后自己去app内编辑生效app 有能力的可以自行修改）
-
 2021-05-17 本项目不在维护，接下来的看你们自己的了
 
-2021-05-10 [沃游戏线路更新地址](https://github.com/simo8102/chinaunicom-AutoSignMachine/blob/main/%E7%BA%BF%E8%B7%AF%E6%9B%B4%E6%96%B0.md)
-
-2021-05-09 [新项目:联通app HOOK线路](https://github.com/simo8102/wostorehook)
-
-2021-05-08 添加阅读领1G流量（未测试）
+2021-05-25 用源码编译了一个能自动更新沃线路的wg版本请到[releases](https://github.com/simo8102/chinaunicom-AutoSignMachine/releases)下载
 
 添加一个免流软件 [乌拉网游加速器](http://t.cn/A6tN2mr0)
-
-
 
 2121-05-07添加沃游戏线路具体如下：
 
