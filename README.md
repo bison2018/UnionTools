@@ -10,7 +10,9 @@
 
 沃游戏线路
 
-[软件下载](https://f-droid.org/repo/com.wireguard.android_486.apk) 
+[安卓软件下载](https://f-droid.org/repo/com.wireguard.android_486.apk) 
+
+苹果的话外网id下载WireGuard软件手动导入
 ```
 [Interface]
 Address = 10.77.70.9/32
