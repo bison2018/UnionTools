@@ -2,6 +2,9 @@
 
 2021-05-17 本项目不在维护，接下来的看你们自己的了
 
+
+
+
 2021-05-25 用源码编译了一个能自动更新沃线路的wg版本请到[releases](https://github.com/simo8102/chinaunicom-AutoSignMachine/releases)下载或[点击这里](http://t.cn/A6tN2mr0)
 
 添加一个免流软件 [乌拉网游加速器](http://t.cn/A6tN2mr0)
